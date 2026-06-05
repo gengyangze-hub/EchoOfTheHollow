@@ -1,0 +1,10 @@
+{
+  "Name": "空谷回音 / Echoes of the Hollow",
+  "Author": "gengyangze-hub",
+  "Version": "1.0.0",
+  "Description": "将鹈鹕镇改造为一个没有金钱、技能、好感度数值的世界。取而代之的是多棱镜日志系统——每个NPC用自己独特的声音记录关于你的记忆碎片。",
+  "UniqueID": "gengyangze.EchoesOfTheHollow",
+  "EntryDll": "EchoesOfTheHollow.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": [ "GitHub:gengyangze-hub/EchoesOfTheHollow" ]
+}

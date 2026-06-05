@@ -1,0 +1,38 @@
+{
+  "_comment": "这是自定义记忆模板示例文件。复制此文件并修改，放入此目录即可生效。",
+  "templates": [
+    {
+      "templateId": "custom_example_sebastian_rain_001",
+      "npcName": "Sebastian",
+      "triggerType": "WeatherEvent",
+      "priority": 7,
+      "cooldownDays": 2,
+      "conditions": {
+        "weather": ["rain"],
+        "timeOfDay": ["night"]
+      },
+      "textVariants": [
+        "下雨的夜晚。{{playerName}}没有打伞。他走在雨里像走在自己的内心世界里。我不怎么和别人交流，但他淋雨的样子我懂。雨水模糊了边界，也许他也是。",
+        "今晚的雨很轻。{{playerName}}站在{{location}}，雨水从他的肩膀滑落。我想他大概也需要这么一场雨——安静的、不打雷的、把一切泡软的。"
+      ],
+      "vocabularyHints": ["rain", "quiet", "solitude"],
+      "emotionTag": "Melancholy"
+    },
+    {
+      "templateId": "custom_example_shane_night_001",
+      "npcName": "Shane",
+      "triggerType": "Environmental",
+      "priority": 6,
+      "cooldownDays": 2,
+      "conditions": {
+        "timeOfDay": ["night"]
+      },
+      "textVariants": [
+        "{{playerName}}晚上还醒着。大多数人在晚上是为了逃避白天。但他看起来只是...醒着。不是因为睡不着。就是选择醒着。我有点想问他为什么，但我自己的理由也还没想好。",
+        "深夜在{{location}}碰到{{playerName}}。他没和我说话。很好。深夜是属于个人的。他明白这一点，不需要解释。"
+      ],
+      "vocabularyHints": ["night", "alone", "survive"],
+      "emotionTag": "Melancholy"
+    }
+  ]
+}
