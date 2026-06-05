@@ -8,7 +8,7 @@ using StardewValley;
 namespace EchoesOfTheHollow.Systems.Enthusiasm
 {
     /// <summary>
-    /// 兴致系统 — replaces stamina/energy
+    /// 兴致系统 -- replaces stamina/energy
     /// "Enthusiasm" decays with action repetition and recovers through
     /// daydreaming, wind listening, and activity variety.
     /// </summary>
@@ -33,8 +33,8 @@ namespace EchoesOfTheHollow.Systems.Enthusiasm
                 string hint = RandomHelper.Next(4) switch
                 {
                     0 => "今天已经做了很多了。休息一下不是偷懒。",
-                    1 => "手需要歇一歇。去听听风，或者只是站着——什么都别做。",
-                    2 => "兴致用完了。这不是累——是今天已经装满了。",
+                    1 => "手需要歇一歇。去听听风，或者只是站着----什么都别做。",
+                    2 => "兴致用完了。这不是累----是今天已经装满了。",
                     _ => "够了。剩下的明天再做。那些事不会跑掉的。"
                 };
                 Game1.addHUDMessage(new HUDMessage(hint, HUDMessage.newQuest_type));

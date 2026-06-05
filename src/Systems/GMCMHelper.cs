@@ -13,13 +13,13 @@ namespace EchoesOfTheHollow.Systems
         {
             if (!registry.IsLoaded("spacechase0.GenericModConfigMenu"))
             {
-                monitor.Log("[GMCM] Generic Mod Config Menu not found — skipping.", LogLevel.Debug);
+                monitor.Log("[GMCM] Generic Mod Config Menu not found -- skipping.", LogLevel.Debug);
                 return;
             }
 
             try
             {
-                // Get GMCM API as object — avoid IManifest dependency issues
+                // Get GMCM API as object -- avoid IManifest dependency issues
                 var api = registry.GetApi<object>("spacechase0.GenericModConfigMenu");
                 if (api == null)
                 {
@@ -42,7 +42,7 @@ namespace EchoesOfTheHollow.Systems
                         manifest = manifestProp.GetValue(ModEntry.Instance);
                     }
                 }
-                catch { /* Fall through — manifest may be null */ }
+                catch { /* Fall through -- manifest may be null */ }
 
                 // Fallback: try helper.ModRegistry
                 if (manifest == null)
@@ -67,7 +67,7 @@ namespace EchoesOfTheHollow.Systems
 
                 if (manifest == null)
                 {
-                    monitor.Log("[GMCM] Could not resolve mod manifest — GMCM integration skipped.", LogLevel.Warn);
+                    monitor.Log("[GMCM] Could not resolve mod manifest -- GMCM integration skipped.", LogLevel.Warn);
                     return;
                 }
 
@@ -94,7 +94,7 @@ namespace EchoesOfTheHollow.Systems
                 //  Core Toggles
                 // ═══════════════════════════════════════════
                 AddSection("核心系统");
-                AddBool(() => config.EnableJournal, v => config.EnableJournal = v, "启用日志系统", "多棱镜日志——NPC 以自己独特的视角记录关于你的记忆。");
+                AddBool(() => config.EnableJournal, v => config.EnableJournal = v, "启用日志系统", "多棱镜日志----NPC 以自己独特的视角记录关于你的记忆。");
                 AddBool(() => config.EnableBasket, v => config.EnableBasket = v, "启用互惠篮", "替代金币系统的礼物交换。");
                 AddBool(() => config.EnableDriftBox, v => config.EnableDriftBox = v, "启用漂流物箱", "替代出货箱，物品漂向镇上各个角落。");
                 AddBool(() => config.EnableEnthusiasm, v => config.EnableEnthusiasm = v, "启用兴致系统", "替代体力值，追踪活动多样性。");

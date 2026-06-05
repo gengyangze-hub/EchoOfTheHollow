@@ -5,8 +5,8 @@ using Newtonsoft.Json;
 namespace EchoesOfTheHollow.Data
 {
     /// <summary>
-    /// 日志条目 — 每条代表一个NPC对玩家的一次主观记忆
-    /// A single journal entry — one NPC's subjective memory about the player.
+    /// 日志条目 -- 每条代表一个NPC对玩家的一次主观记忆
+    /// A single journal entry -- one NPC's subjective memory about the player.
     /// </summary>
     public class JournalEntry
     {

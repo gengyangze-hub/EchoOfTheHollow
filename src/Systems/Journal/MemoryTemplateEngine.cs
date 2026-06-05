@@ -11,12 +11,12 @@ using StardewModdingAPI;
 namespace EchoesOfTheHollow.Systems.Journal
 {
     /// <summary>
-    /// 记忆模板引擎 — 选择模板、填充参数、渲染文本
-    /// Memory Template Engine — selects templates, fills parameters, renders text.
+    /// 记忆模板引擎 -- 选择模板、填充参数、渲染文本
+    /// Memory Template Engine -- selects templates, fills parameters, renders text.
     ///
     /// 🔑 MEMORY BACK DOOR:
     /// This engine scans ALL .json files in assets/data/templates/ at startup.
-    /// Users can add new templates by dropping .json files — no recompilation needed.
+    /// Users can add new templates by dropping .json files -- no recompilation needed.
     /// Format: identical to MemoryTemplates.json structure.
     /// Custom files OVERRIDE built-in templates with the same templateId.
     /// Files named "*templates*.json" in any subdirectory are auto-loaded.
@@ -205,7 +205,7 @@ namespace EchoesOfTheHollow.Systems.Journal
                     Priority = 5,
                     CooldownDays = 2,
                     TextVariants = new List<string> {
-                        $"今天{{playerName}}来找我了。我们简单地聊了几句。这种感觉很好——不需要说什么特别的话，只是待在一起就够了。",
+                        $"今天{{playerName}}来找我了。我们简单地聊了几句。这种感觉很好----不需要说什么特别的话，只是待在一起就够了。",
                         $"和{{playerName}}说了一会儿话。有时候，哪怕只是短短几句话，也能让一天变得不一样。"
                     },
                     EmotionTag = "Warm",
@@ -384,7 +384,7 @@ namespace EchoesOfTheHollow.Systems.Journal
                 Game1.year * 112 + Utility.getSeasonNumber(Game1.currentSeason) * 28 + Game1.dayOfMonth;
         }
 
-        /// <summary>Generate a journal entry from a template</summary>
+        /// <summary>Generate a journal entry from a template, with NPC-personalized content</summary>
         public Data.JournalEntry GenerateEntry(MemoryTemplate template, string npcName,
             Dictionary<string, string> parameters, int gameTime, string? location = null)
         {
@@ -393,16 +393,26 @@ namespace EchoesOfTheHollow.Systems.Journal
                 ? template.TextVariants[RandomHelper.Next(template.TextVariants.Count)]
                 : "今天在镇上看到了{{playerName}}。";
 
+            // Get NPC voice and clarity
+            var voice = _voiceRegistry.GetProfile(npcName);
+            float clarity = MemoryClaritySystem.GetClarity(npcName);
+
             // Fill parameters
             variant = StringHelper.ReplaceParameters(variant, parameters);
 
-            // Get NPC voice
-            var voice = _voiceRegistry.GetProfile(npcName);
+            // ── Append NPC-personalized sentence to the raw text ──
+            string npcFlavor = BuildNpcFlavor(voice, npcName, template.TriggerType, template.EmotionTag, clarity);
+            if (!string.IsNullOrEmpty(npcFlavor) && !variant.Contains(npcFlavor))
+                variant += " " + npcFlavor;
 
-            // Render through NPC voice
+            // Render through NPC voice with clarity-adjusted intensity
             string text = voice != null
-                ? _voiceRegistry.RenderEntry(variant, voice, parameters)
+                ? _voiceRegistry.RenderEntry(variant, voice, parameters, clarity)
                 : variant;
+
+            // Strip ALL * characters and Unicode not in SDV font
+            text = text.Replace("*", "");
+            text = StringHelper.CleanUnicode(text);
 
             var entry = new Data.JournalEntry
             {
@@ -422,6 +432,72 @@ namespace EchoesOfTheHollow.Systems.Journal
             };
 
             return entry;
+        }
+
+        // ═══════════════════════════════════════════════
+        //  NPC-personalized parameter generators
+        // ═══════════════════════════════════════════════
+
+        /// <summary>Build a single NPC-personalized sentence based on voice profile, trigger, emotion, and clarity.</summary>
+        private static string BuildNpcFlavor(NpcVoiceProfile? voice, string npcName, TriggerType trigger, string emotion, float clarity)
+        {
+            if (voice == null) return "";
+
+            // Observation: what this NPC notices
+            string quality = (voice.ObservedQualities != null && voice.ObservedQualities.Count > 0)
+                ? voice.ObservedQualities[RandomHelper.Next(voice.ObservedQualities.Count)]
+                : "一种说不清的东西";
+
+            // Detail: trigger-specific context
+            string detail = trigger switch
+            {
+                TriggerType.Environmental => RandomHelper.Next(3) switch {
+                    0 => $"风吹过的时候{npcName}正好在看这边",
+                    1 => $"{npcName}放下了手头的事",
+                    _ => $"那一刻{npcName}觉得周围都安静了下来"
+                },
+                TriggerType.DirectInteraction => RandomHelper.Next(3) switch {
+                    0 => $"说完话后{npcName}在原地站了一会儿",
+                    1 => $"对话过后{npcName}想了想刚才的话",
+                    _ => $"几句话的功夫，但{npcName}觉得不一样了"
+                },
+                TriggerType.Daydream => RandomHelper.Next(3) switch {
+                    0 => $"看到你发呆的样子，{npcName}没上前打扰",
+                    1 => $"静静站着的样子让{npcName}想起了一些事",
+                    _ => $"发呆也是一种语言--{npcName}懂这个"
+                },
+                TriggerType.CrossDayObservation => RandomHelper.Next(3) switch {
+                    0 => $"入睡前{npcName}又想起了白天",
+                    1 => $"今天npcName比平时多留意了一些",
+                    _ => $"日子一天天过，但有些瞬间会留下来"
+                },
+                _ => RandomHelper.Next(3) switch {
+                    0 => $"{npcName}把这件事记在了心里",
+                    1 => $"这件事让{npcName}想了很久",
+                    _ => $"有些东西写下来才不会忘"
+                }
+            };
+
+            // Feeling: emotion-specific inner state
+            string feeling = emotion switch
+            {
+                "Warm" => RandomHelper.Next(3) switch { 0 => "心里暖了一下", 1 => "嘴角不自觉上扬", _ => "觉得今天是个好日子" },
+                "Melancholy" => RandomHelper.Next(3) switch { 0 => "心里有点软", 1 => "忽然安静了一会儿", _ => "想起了很远的事" },
+                "Curiosity" => RandomHelper.Next(3) switch { 0 => "想了解更多", 1 => "心里打了个问号--但善意的", _ => "觉得这个人有点不一样" },
+                "Longing" => RandomHelper.Next(3) switch { 0 => "希望下次不会太久", 1 => "有点想再见一面", _ => "时间过得太快了" },
+                "Wonder" => RandomHelper.Next(3) switch { 0 => "心里亮了一下", 1 => "好像发现了什么重要的东西", _ => "觉得这世界比想象的大" },
+                "Nostalgia" => RandomHelper.Next(3) switch { 0 => "想起了从前", 1 => "旧时光的味道", _ => "记忆忽然涌上来" },
+                "Reflection" => RandomHelper.Next(3) switch { 0 => "想了很多", 1 => "觉得应该记下来", _ => "有些事需要慢慢想" },
+                _ => RandomHelper.Next(3) switch { 0 => "觉得今天不太一样", 1 => "心里记下了这一笔", _ => "这一天会留在记忆里" }
+            };
+
+            // Assemble based on clarity: higher clarity = richer detail
+            if (clarity < 0.3f)
+                return $"{detail}。{npcName}觉得{quality}。";
+            else if (clarity < 0.6f)
+                return $"{detail}——{feeling}。{npcName}注意到了{quality}。";
+            else
+                return $"{detail}。{feeling}。{npcName}特别留意到{quality}——也许该记下来。";
         }
 
         /// <summary>🔑 Public API: Register templates at runtime (for other mods)</summary>

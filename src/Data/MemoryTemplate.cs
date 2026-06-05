@@ -3,8 +3,8 @@ using System.Collections.Generic;
 namespace EchoesOfTheHollow.Data
 {
     /// <summary>
-    /// 记忆模板 — 可扩展的记忆生成蓝图
-    /// Memory template — the blueprint for generating journal entries.
+    /// 记忆模板 -- 可扩展的记忆生成蓝图
+    /// Memory template -- the blueprint for generating journal entries.
     ///
     /// 🔑 BACK DOOR: Templates can be added/overridden via JSON files in assets/data/templates/
     /// without recompiling the mod. The MemoryTemplateEngine scans all .json files in that

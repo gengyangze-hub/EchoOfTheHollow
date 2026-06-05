@@ -1,1034 +1,1107 @@
 {
-  "metadata": { "version": 1, "lastUpdated": "2026-06-05" },
   "voices": [
     {
-      "npcName": "Pierre",
-      "profile": {
-        "writingStyle": "Prose",
-        "baseTone": "HonestUncertain",
-        "metaphorFrequency": 0.3,
-        "metaphorDomain": "StoreShelves",
-        "valueCore": "说真话的勇气",
-        "personalityDescription": "在互惠篮旁开杂货店，经常不开门。讨厌敷衍的社交，在意人们是否坦诚相待。",
-        "salutationPattern": "又过了一天。",
-        "closingPattern": "- 皮埃尔的杂货店·日记",
-        "vocabularyMapping": {
-          "nice": "真诚的",
-          "friend": "偶尔说话的人",
-          "talk": "好好说话",
-          "good": "可以相信的"
-        },
-        "metaphorTemplates": {
-          "honesty": ["像没关好的窗户，风总能找到缝隙"],
-          "silence": ["比说出口的话诚实三倍"],
-          "trade": ["交换的不是物品，是信任的碎片"]
-        },
-        "signaturePhrases": ["今天杂货店又没开门。", "我不知道这样对不对。", "也许诚实才是唯一的货架。"],
-        "observedQualities": ["说话时的犹豫", "放东西的轻重", "来到店里的眼神"],
-        "stylisticRules": [
-          { "matchPattern": "我觉得", "replacement": "我不知道是不是，但", "applyChance": 0.7 }
-        ]
-      }
-    },
-    {
-      "npcName": "Caroline",
-      "profile": {
-        "writingStyle": "Poetry",
-        "baseTone": "QuietObservant",
-        "metaphorFrequency": 0.6,
-        "metaphorDomain": "WillowGarden",
-        "valueCore": "一个人的午后",
-        "personalityDescription": "爱在柳树下独自写诗，不热衷交谈却非常留心别人的细微变化。",
-        "salutationPattern": "午后，柳树下。",
-        "closingPattern": "- 卡洛琳",
-        "vocabularyMapping": {
-          "see": "留意到",
-          "quiet": "安静的",
-          "person": "过路人",
-          "day": "午后",
-          "nice": "温柔的"
-        },
-        "metaphorTemplates": {
-          "loneliness": ["像柳枝垂到水面——它在碰自己"],
-          "observation": ["有些事不用眼睛看，用树影的长度来量"],
-          "writing": ["诗是下午没喝完的茶，凉了才有味道"]
-        },
-        "signaturePhrases": ["我也不太确定。", "阳光在树叶间移动了一寸。"],
-        "observedQualities": ["步履的节奏", "站在那里时的阴影", "与自己相处的能力"],
-        "stylisticRules": [
-          { "matchPattern": "\\\\.", "replacement": "。", "applyChance": 0.5 }
-        ]
-      }
-    },
-    {
       "npcName": "Abigail",
-      "profile": {
-        "writingStyle": "Poetry",
-        "baseTone": "MelancholyCurious",
-        "metaphorFrequency": 0.7,
-        "metaphorDomain": "UndergroundDark",
-        "valueCore": "独特的石子与梦境",
-        "personalityDescription": "收集奇特石头，每块能讲出一个梦。不在乎别人是否理解。",
-        "salutationPattern": "今天捡到一块石头。",
-        "closingPattern": "- 艾比盖尔",
-        "vocabularyMapping": {
-          "see": "瞥见",
-          "walk": "飘移",
-          "talk": "低语",
-          "think": "梦到",
-          "quiet": "被埋起来的",
-          "strange": "古老的"
-        },
-        "metaphorTemplates": {
-          "farming": ["像看一个人挖自己的坟墓...不过是给种子的"],
-          "friendship": ["像两块紫水晶埋在相邻的矿脉里"],
-          "mining": ["地下比地上诚实——至少它承认自己是黑暗的"],
-          "silence": ["不说话的人说的话最多，只是没人听"]
-        },
-        "signaturePhrases": ["但我又知道什么呢？我只是那个紫头发的女孩。", "矿洞也在呼唤我。", "有些石头一直在等待被捡起。"],
-        "observedQualities": ["静止", "安静的坚持", "温柔的触碰", "被埋住的悲伤"],
-        "stylisticRules": [
-          { "matchPattern": "\\\\.", "replacement": "...", "applyChance": 0.3 },
-          { "matchPattern": "非常", "replacement": "极其", "applyChance": 0.4 }
-        ]
-      }
-    },
-    {
-      "npcName": "Gus",
-      "profile": {
-        "writingStyle": "Prose",
-        "baseTone": "WarmNurturing",
-        "metaphorFrequency": 0.4,
-        "metaphorDomain": "KitchenFood",
-        "valueCore": "一顿饭带来的安慰",
-        "personalityDescription": "经营无定价的红鹤食堂，人们拿故事换食物，他只默默做出合适的汤。",
-        "salutationPattern": "今晚的厨房笔记：",
-        "closingPattern": "- 格斯",
-        "vocabularyMapping": {
-          "sad": "需要一碗热汤的",
-          "cold": "该进屋里坐坐的",
-          "busy": "忘记吃饭的",
-          "friend": "来过食堂的人"
-        },
-        "metaphorTemplates": {
-          "comfort": ["好的食物不需要名字，只需要温度"],
-          "listening": ["汤听的故事比我还多"],
-          "community": ["盐在任何菜里都不说话，但没有盐什么都不对"]
-        },
-        "signaturePhrases": ["今天的汤是特地多熬了一锅的。", "进来坐坐吧，门开着。"],
-        "observedQualities": ["拿碗的手势", "吃东西的节奏", "一个人抬头看菜牌的次数"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Pam",
-      "profile": {
-        "writingStyle": "Fragments",
-        "baseTone": "BitterVulnerable",
-        "metaphorFrequency": 0.2,
-        "metaphorDomain": "BarRoad",
-        "valueCore": "沉默与酒",
-        "personalityDescription": "因过往创伤需要大量独处，喝酒是暂忘过去的方法，但会记住不打扰她沉默的人。",
-        "salutationPattern": "...",
-        "closingPattern": "- 潘姆",
-        "vocabularyMapping": {
-          "life": "路",
-          "happy": "没想的",
-          "friend": "不烦人的",
-          "help": "别管我",
-          "sorry": "过去了"
-        },
-        "metaphorTemplates": {
-          "drinking": ["酒杯是透明的墙，看起来没有，但穿不过去"],
-          "silence": ["沉默不是空的，是满到溢不出来"],
-          "forgiveness": ["过去是一个没有门的房间"]
-        },
-        "signaturePhrases": ["没什么好说的。", "别问。", "酒还够。"],
-        "observedQualities": ["与她保持距离的方式", "什么也不问的能力", "不露出怜悯的表情"],
-        "stylisticRules": [
-          { "matchPattern": "因为", "replacement": "不为什么，就是", "applyChance": 0.5 }
-        ]
-      }
-    },
-    {
-      "npcName": "Clint",
-      "profile": {
-        "writingStyle": "InternalMonologue",
-        "baseTone": "LonelySelfAware",
-        "metaphorFrequency": 0.4,
-        "metaphorDomain": "AnvilStone",
-        "valueCore": "铁与火的诚实",
-        "personalityDescription": "铁匠，只修复旧物不制造新的。认为物品的伤痕就是它的生命史，不可抹去。",
-        "salutationPattern": "炉火还亮着。",
-        "closingPattern": "- 克林特的锻炉边",
-        "vocabularyMapping": {
-          "broken": "有故事了的",
-          "new": "还没活过的",
-          "fix": "陪着它",
-          "old": "见过世面的",
-          "perfect": "还没受伤的"
-        },
-        "metaphorTemplates": {
-          "repair": ["修复不是让它变新，而是告诉它'我看见了'"],
-          "damage": ["每道裂纹都是一句没说出口的话"],
-          "metal": ["铁不会撒谎——裂了就是裂了，焊了就是焊了"]
-        },
-        "signaturePhrases": ["这块铁还热着。", "伤痕留着比较好。", "我只修旧东西。"],
-        "observedQualities": ["一个人身上的磨损痕迹", "握工具的手势", "坐下时的僵硬"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Emily",
-      "profile": {
-        "writingStyle": "FreeVerse",
-        "baseTone": "WhimsicalIntuitive",
-        "metaphorFrequency": 0.8,
-        "metaphorDomain": "ColorsEnergy",
-        "valueCore": "色彩与无形的能量",
-        "personalityDescription": "认为世界由颜色构成，每个人的情绪会改变周围颜色。约人在树下看云是为那些颜色找朋友。",
-        "salutationPattern": "今天看到了一种新颜色。",
-        "closingPattern": "- 艾米丽（和她的所有颜色）",
-        "vocabularyMapping": {
-          "sad": "有一层灰蓝色",
-          "happy": "发出淡金色",
-          "friend": "颜色相配的人",
-          "beautiful": "会发光的",
-          "tired": "颜色有点淡了的"
-        },
-        "metaphorTemplates": {
-          "emotion": ["快乐是橘色在跳舞，悲伤是蓝色在午睡"],
-          "connection": ["有些人的颜色碰在一起会变成花"],
-          "silence": ["沉默也有颜色——浅灰带一点点紫"],
-          "wind": ["风把颜色从一个人吹到另一个人身上"]
-        },
-        "signaturePhrases": ["你能感觉到吗？空气里多了一种颜色。", "今天的云在等朋友。"],
-        "observedQualities": ["周围的颜色光环", "走路带起的能量漩涡", "笑的时候散发的光芒"],
-        "stylisticRules": [
-          { "matchPattern": "，", "replacement": "，然后，", "applyChance": 0.2 }
-        ]
-      }
-    },
-    {
-      "npcName": "Maru",
-      "profile": {
-        "writingStyle": "TechnicalLog",
-        "baseTone": "CuriousPrecise",
-        "metaphorFrequency": 0.3,
-        "metaphorDomain": "StarsMachines",
-        "valueCore": "机械的逻辑",
-        "personalityDescription": "喜欢造小机械，总故意留一个不完美的齿轮让它发出咔嗒声。完美太寂寞了。",
-        "salutationPattern": "实验日志：第N天。",
-        "closingPattern": "- 玛鲁（95.7%确定）",
-        "vocabularyMapping": {
-          "weird": "不符合参数的",
-          "friend": "兼容的人",
-          "happy": "正反馈循环",
-          "sad": "低电量",
-          "love": "系统优化"
-        },
-        "metaphorTemplates": {
-          "perfection": ["完美的机器不需要人——完美的发明留一道缝"],
-          "curiosity": ["每个问题都是一个未闭合的电路"],
-          "patience": ["调试就是不断把错的事情做对"],
-          "imperfection": ["咔嗒声不是故障——是心跳"]
-        },
-        "signaturePhrases": ["还需要再多测几次。", "故意留的那个齿轮声音很对。", "有时候不精准才是准确的。"],
-        "observedQualities": ["重复做事的风格", "面对故障的反应", "实验精神"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Harvey",
-      "profile": {
-        "writingStyle": "ClinicalProse",
-        "baseTone": "GentleAnalytic",
-        "metaphorFrequency": 0.3,
-        "metaphorDomain": "ScienceMedicine",
-        "valueCore": "沉默的聆听",
-        "personalityDescription": "诊所医生，认为最重要的职责不是治病而是听人说完不敢说的话。生病只是信号。",
-        "salutationPattern": "诊室笔记：",
-        "closingPattern": "- 哈维医生",
-        "vocabularyMapping": {
-          "sick": "在发出信号的",
-          "tired": "需要休息的",
-          "sad": "有未表达情绪的",
-          "help": "倾听",
-          "pain": "身体在说话的"
-        },
-        "metaphorTemplates": {
-          "illness": ["每个症状都是一个没讲完的故事"],
-          "listening": ["听诊器听到的不只是心跳，是生活的节奏"],
-          "care": ["有时候什么都不做，比任何处方都好"],
-          "silence": ["沉默是一种重要的生命体征"]
-        },
-        "signaturePhrases": ["体检报告上什么都没有。", "记得喝水。", "病不是问题，问题是没有说出来。"],
-        "observedQualities": ["走路的步态", "手的温度", "眼睛的疲惫程度", "说话时的停顿"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Robin",
-      "profile": {
-        "writingStyle": "CraftNotes",
-        "baseTone": "PracticalCreative",
-        "metaphorFrequency": 0.4,
-        "metaphorDomain": "WoodBuilding",
-        "valueCore": "木头的新生",
-        "personalityDescription": "木匠，从不造方正的屋子。为每个人量身定做空间，只问：你想让这房子呼吸吗？",
-        "salutationPattern": "木工笔记：",
-        "closingPattern": "- 罗宾的木工房",
-        "vocabularyMapping": {
-          "build": "让它站起来",
-          "house": "会呼吸的空间",
-          "broken": "等着被重新认识的",
-          "new": "还没找到主人的",
-          "beautiful": "自己长出形状的"
-        },
-        "metaphorTemplates": {
-          "building": ["房子不是盖的——是让出来的"],
-          "wood": ["每块木头都记得自己还是树的时候"],
-          "design": ["直线是偷懒，曲线才是诚实"]
-        },
-        "signaturePhrases": ["这块木头还没想好要变成什么。", "房子呼吸了吗？", "量尺在我手上，但尺寸在木头心里。"],
-        "observedQualities": ["手的粗糙程度", "对空间的感觉", "把东西放下的方式"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Demetrius",
-      "profile": {
-        "writingStyle": "ScientificReport",
-        "baseTone": "SystematicDetached",
-        "metaphorFrequency": 0.4,
-        "metaphorDomain": "BiologyNumbers",
-        "valueCore": "数据的诗意",
-        "personalityDescription": "科学家，痴迷于测量'无用数据'：雨后泥土温度、柳树摇摆节拍。数字本身也是一首诗。",
-        "salutationPattern": "观测记录：",
-        "closingPattern": "- 德米特里厄斯",
-        "vocabularyMapping": {
-          "beautiful": "具备高审美信息密度的",
-          "interesting": "值得进一步测量",
-          "random": "尚未发现规律的",
-          "calm": "熵值较低的",
-          "alive": "正在参与热力学过程的"
-        },
-        "metaphorTemplates": {
-          "data": ["数字是宇宙最诚实的诗歌"],
-          "nature": ["云的形状有解析解——只是我们还没推导出来"],
-          "beauty": ["公式在成为公式之前，也是一种直觉"]
-        },
-        "signaturePhrases": ["进一步测量是必要的。", "样本量不足，但趋势是对的。", "万物皆可量化。但量化不了的都叫诗。"],
-        "observedQualities": ["每天的路径规律", "选择的基本模式", "面对新事物时的测量距离"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Leo",
-      "profile": {
-        "writingStyle": "Gestural",
-        "baseTone": "PlayfulMysterious",
-        "metaphorFrequency": 0.5,
-        "metaphorDomain": "AnimalBirds",
-        "valueCore": "动物的语言",
-        "personalityDescription": "和鹦鹉为伴的小孩，觉得人类语言限制太多，正在创造一种只有自己能懂的手势语。",
-        "salutationPattern": "今天鹦鹉对我说：",
-        "closingPattern": "- 雷欧（旁边站着鸟）",
-        "vocabularyMapping": {
-          "hello": "（抬起左手）",
-          "goodbye": "（手指转圈）",
-          "friend": "（掌心向上）",
-          "sad": "（把头偏向一边）"
-        },
-        "metaphorTemplates": {
-          "language": ["说话是鸟的事。我只是模仿"],
-          "understanding": ["不懂一个人没关系，懂一只鸟就很难了"],
-          "freedom": ["羽毛长在背上不是为了好看"]
-        },
-        "signaturePhrases": ["鹦鹉说他不坏。", "我的手势你学不会。", "动物都不用说话，它们已经讲完了。"],
-        "observedQualities": ["第一次见到动物时的样子", "喂鸟的姿势", "安静时的眼睛"],
-        "stylisticRules": [
-          { "matchPattern": "说", "replacement": "指", "applyChance": 0.3 }
-        ]
-      }
-    },
-    {
-      "npcName": "Jas",
-      "profile": {
-        "writingStyle": "SimpleDiary",
-        "baseTone": "ChildlikeEarnest",
-        "metaphorFrequency": 0.2,
-        "metaphorDomain": "FlowersFamily",
-        "valueCore": "被需要的感觉",
-        "personalityDescription": "文森特的姐姐，两人相依为命。最快乐的时候是有人夸她编的花环。",
-        "salutationPattern": "今天编了一个花环。",
-        "closingPattern": "- 贾斯",
-        "vocabularyMapping": {
-          "happy": "开心的",
-          "sad": "有点不舒服",
-          "friend": "喜欢我花环的人",
-          "nice": "甜甜的",
-          "help": "一起"
-        },
-        "metaphorTemplates": {
-          "family": ["花环不会掉，因为它编得紧紧的"],
-          "recognition": ["被看到的感觉像晒了太阳"],
-          "childhood": ["长大还远，所以今天很重"]
-        },
-        "signaturePhrases": ["文森特又去捉虫子了。", "这个花环...是给你的。", "我还小，但我不笨。"],
-        "observedQualities": ["蹲下来的高度", "说话的语气", "夸花环时的表情"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Vincent",
-      "profile": {
-        "writingStyle": "HeroicDoodle",
-        "baseTone": "PlayfulBrave",
-        "metaphorFrequency": 0.3,
-        "metaphorDomain": "BugsKnight",
-        "valueCore": "虫子与英雄梦",
-        "personalityDescription": "喜欢虫子，幻想自己是保护镇子的小骑士。评判世界的标准：你对虫子好吗？",
-        "salutationPattern": "骑士日志！",
-        "closingPattern": "- 文森特骑士🪲",
-        "vocabularyMapping": {
-          "person": "市民",
-          "walk": "巡逻",
-          "help": "保护",
-          "good": "英雄的",
-          "bad": "需要打败的"
-        },
-        "metaphorTemplates": {
-          "bravery": ["英雄不用很大——比一只甲虫大就够了"],
-          "kindness": ["对虫子好的人，心里有盔甲"],
-          "observation": ["大人看不到的东西，骑士必须看见"]
-        },
-        "signaturePhrases": ["今天也巡逻完毕！", "你不会踩虫子的吧？", "我的剑是树枝做的，但勇气是真的。"],
-        "observedQualities": ["对虫子的态度（最重要）", "愿不愿意蹲下来", "剑术天赋"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Linus",
-      "profile": {
-        "writingStyle": "SpokenWord",
-        "baseTone": "WiseGentle",
-        "metaphorFrequency": 0.5,
-        "metaphorDomain": "WildernessSky",
-        "valueCore": "野地的脉搏",
-        "personalityDescription": "住在山上帐篷里，认为整个山谷的河流、风、植物都是一个生命体，他在聆听这个生命体的呼吸。",
-        "salutationPattern": "山谷今晚的呼吸是这样的。",
-        "closingPattern": "- 莱纳斯",
-        "vocabularyMapping": {
-          "house": "遮风的地方",
-          "food": "大地给的",
-          "friend": "不会被风吓到的人",
-          "lonely": "与万物在一起",
-          "home": "任何有树的地方"
-        },
-        "metaphorTemplates": {
-          "nature": ["树不会说话，但每一阵风都是它们的代笔"],
-          "belonging": ["帐篷不是家——整个山谷才是"],
-          "time": ["云没有表。草地也是。它们只是存在"],
-          "wind": ["风是这个山谷的脉搏，我搭帐篷是为了听"]
-        },
-        "signaturePhrases": ["山谷的气息今天有些不同。", "风不是空的，它满载着故事。", "如果你想要家，任何一棵树下都可以。"],
-        "observedQualities": ["走路时踩断树枝的数量", "闻花香的习惯", "对风的反应", "与动物保持的距离"],
-        "stylisticRules": [
-          { "matchPattern": "。", "replacement": "。\n", "applyChance": 0.4 }
-        ]
-      }
-    },
-    {
-      "npcName": "Wizard",
-      "profile": {
-        "writingStyle": "CrypticProse",
-        "baseTone": "MysteriousResolute",
-        "metaphorFrequency": 0.6,
-        "metaphorDomain": "ArcaneUnknown",
-        "valueCore": "未知与保留",
-        "personalityDescription": "塔中的神秘人，不轻易露面，守护着'最终的无意义'——那些永不散播的回忆。",
-        "salutationPattern": "观测：",
-        "closingPattern": "- M. 拉斯莫迪斯",
-        "vocabularyMapping": {
-          "person": "凡人",
-          "know": "感知到",
-          "secret": "尚未遣散的",
-          "memory": "在虚空中悬浮的碎片",
-          "ordinary": "表象之下的"
-        },
-        "metaphorTemplates": {
-          "magic": ["魔法不是力量——是选择不去改变"],
-          "memory": ["有些记忆太重了，不能交给任何人"],
-          "mystery": ["真相的反面不是谎言，是更大的真相"],
-          "time": ["时间在别处是直线，在这里是漩涡"]
-        },
-        "signaturePhrases": ["不是我选择了沉默——是沉默选择了我。", "有些事你知道也不可能理解。", "塔的门半开着。"],
-        "observedQualities": ["对异常的敏感度", "在第7层意识中的形态", "靠近塔时的思维波"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Willy",
-      "profile": {
-        "writingStyle": "SeaShanty",
-        "baseTone": "PatientWise",
-        "metaphorFrequency": 0.5,
-        "metaphorDomain": "OceanFish",
-        "valueCore": "等待的艺术",
-        "personalityDescription": "渔夫，每天只钓一条鱼然后放生，实际在等待一条传说中会唱你心中最想听那首歌的鱼。",
-        "salutationPattern": "今天海的颜色：",
-        "closingPattern": "- 老威利的船舷笔记",
-        "vocabularyMapping": {
-          "wait": "坐着",
-          "hope": "鱼线还没收",
-          "lonely": "一个人在海边",
-          "enough": "正好",
-          "time": "潮"
-        },
-        "metaphorTemplates": {
-          "fishing": ["钓鱼不是抓——是邀请"],
-          "patience": ["每条鱼都有自己的时间，人只是学会等"],
-          "ocean": ["海底下有全部的故事，浪只是序言"],
-          "waiting": ["那条鱼唱的歌，只有真正等的人才听得见"]
-        },
-        "signaturePhrases": ["今天只钓了一条。放生了。", "那条鱼还在别的地方游。", "海水咸的时候是它在哭，甜的时候是它在笑。"],
-        "observedQualities": ["对海的畏惧程度", "握鱼竿的方式", "安静坐多久"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Gunther",
-      "profile": {
-        "writingStyle": "CuratorialProse",
-        "baseTone": "ScholarlyWhimsical",
-        "metaphorFrequency": 0.5,
-        "metaphorDomain": "MuseumMemory",
-        "valueCore": "物的记忆",
-        "personalityDescription": "博物馆管理者，收集的不是古物而是带有别人触摸痕迹的物件，为每个物件编造不可能的过去。",
-        "salutationPattern": "藏品登记：",
-        "closingPattern": "- 冈瑟的博物馆日志",
-        "vocabularyMapping": {
-          "old": "被抚摸过很多次的",
-          "found": "刚刚遇见的",
-          "history": "有人给它编过故事的",
-          "artifact": "记忆的容器",
-          "museum": "记忆旅馆"
-        },
-        "metaphorTemplates": {
-          "objects": ["这个杯子的前世可能当过月亮"],
-          "history": ["真的历史和编的历史一样重"],
-          "collection": ["收藏不是为了拥有——是为了替别人保管他们的曾经"]
-        },
-        "signaturePhrases": ["新到了一件藏品。我已经给它编了三个故事。", "你相信这个勺子曾经属于一位龙骑士吗？我不信，但故事好听。"],
-        "observedQualities": ["触碰文物的手势", "听故事时的表情", "对不可能的接受程度"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Lewis",
-      "profile": {
-        "writingStyle": "OfficialNote",
-        "baseTone": "WearyDutiful",
-        "metaphorFrequency": 0.2,
-        "metaphorDomain": "TownOrder",
-        "valueCore": "秩序的边界",
-        "personalityDescription": "镇长，对权力极度厌烦，唯一职责是确保每个人可以拒绝任何集体规则。在镇边树上挂白灯笼表示今天不想被打扰。",
-        "salutationPattern": "镇长笔记（非官方）：",
-        "closingPattern": "- 刘易斯（今天灯笼的状态：）",
-        "vocabularyMapping": {
-          "rule": "建议",
-          "must": "可以",
-          "town": "共同居住的地方",
-          "leader": "挂灯笼的人",
-          "order": "允许混乱"
-        },
-        "metaphorTemplates": {
-          "leadership": ["最好的管理是不管理"],
-          "freedom": ["灯笼亮起，就是镇子在说：今天不用装"],
-          "community": ["一个不需要领袖的镇子才是活着的"]
-        },
-        "signaturePhrases": ["今天又没人找我。这很好。", "灯笼还是挂上去吧。", "我不做决定，我只是...在场。"],
-        "observedQualities": ["遵守规则的倾向（越不遵守越有意思）", "对白灯笼的留意", "独处的习惯"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Marnie",
-      "profile": {
-        "writingStyle": "CareLog",
-        "baseTone": "UnconditionalWarmth",
-        "metaphorFrequency": 0.3,
-        "metaphorDomain": "AnimalsPasture",
-        "valueCore": "不加评判的照料",
-        "personalityDescription": "牧场主人，对所有动物一视同仁，对人也像动物一样：不解释，只给最单纯的照料。",
-        "salutationPattern": "今天牧场的状况：",
-        "closingPattern": "- 玛妮",
-        "vocabularyMapping": {
-          "sad": "需要摸摸头的",
-          "hungry": "该喂了的",
-          "cold": "该牵进棚里的",
-          "person": "会走路的动物",
-          "love": "每天做的"
-        },
-        "metaphorTemplates": {
-          "care": ["奶牛不需要解释，它只需要干草"],
-          "animals": ["动物不说话，但它们什么都懂——人说话太多，所以什么都不懂"],
-          "kindness": ["善良不是一种选择，是一种习惯——每天喂食的时候养成的"]
-        },
-        "signaturePhrases": ["动物们都好。你呢？", "不用说话，喝杯牛奶吧。", "它们不问为什么，我也不问。"],
-        "observedQualities": ["靠近动物的方式", "对粪便的态度", "轻声说话的习惯"],
-        "stylisticRules": []
-      }
+      "gender": "Female",
+      "writingStyle": "Diary",
+      "baseTone": "Curiosity",
+      "metaphorFrequency": 0.45,
+      "metaphorDomain": "CrystalsAndMines",
+      "salutationPattern": "今天...",
+      "closingPattern": "- {npcName}",
+      "vocabularyMapping": {
+        "漂亮": "像紫水晶一样美",
+        "有趣": "神秘又吸引人",
+        "无聊": "像灰色的石头",
+        "安静": "像矿洞深处的那种安静",
+        "特别": "独特的",
+        "看到": "注意到",
+        "走过": "穿过"
+      },
+      "metaphorTemplates": {
+        "雨": ["雨水打在窗户上的声音，像无数颗小石头在敲。", "下雨的时候矿洞里的水晶会特别亮。"],
+        "晴天": ["阳光穿过树叶的样子，让我想起某种矿石的光泽。", "今天的天很干净，像是被水冲过的石英。"],
+        "夜晚": ["夜晚是宝石最好的展示时间——月光会让它们发光。", "晚上的风带着矿石的味道。"],
+        "安静": ["安静的时候能听到水晶生长的声音——我发誓是真的。"]
+      },
+      "signaturePhrases": [
+        "我今天又在矿洞里待了一会儿。",
+        "有时候我觉得石头比人更懂我。",
+        "你见过紫水晶在月光下的颜色吗？"
+      ],
+      "observedQualities": ["对未知的好奇", "不怕黑暗", "安静的存在感"],
+      "stylisticRules": [
+        { "matchPattern": "很美", "replacement": "像水晶一样美", "applyChance": 0.6 },
+        { "matchPattern": "很好", "replacement": "像发现了新矿石一样好", "applyChance": 0.4 },
+        { "matchPattern": "有趣", "replacement": "让人想一探究竟", "applyChance": 0.5 }
+      ]
     },
     {
       "npcName": "Alex",
-      "profile": {
-        "writingStyle": "SportJournal",
-        "baseTone": "EagerSimple",
-        "metaphorFrequency": 0.2,
-        "metaphorDomain": "SportsStrength",
-        "valueCore": "成为更好的自己",
-        "personalityDescription": "热爱格球和运动，用简单的世界观理解复杂的事。对强大的事物有天然的尊重，但也开始理解温柔的力量。",
-        "salutationPattern": "今天也训练了。",
-        "closingPattern": "- 亚历克斯",
-        "vocabularyMapping": {
-          "think": "觉得",
-          "difficult": "需要多练的",
-          "friend": "队友",
-          "strong": "能扛住的",
-          "help": "搭把手",
-          "sad": "状态不好"
-        },
-        "metaphorTemplates": {
-          "training": ["每一次重复都是在和昨天的自己告别"],
-          "strength": ["力量不是举起来的重量，是放下来的重量"],
-          "team": ["一个人跑得快，两个人跑得远"]
-        },
-        "signaturePhrases": ["今天投进了几个好球。", "你也要一起练吗？", "加油。"],
-        "observedQualities": ["走路时肩膀的线条", "握手的力度", "面对困难时的眼神"],
-        "stylisticRules": []
-      }
+      "gender": "Male",
+      "writingStyle": "Journal",
+      "baseTone": "Energetic",
+      "metaphorFrequency": 0.3,
+      "metaphorDomain": "Sports",
+      "salutationPattern": "嘿——",
+      "closingPattern": "- {npcName}",
+      "vocabularyMapping": {
+        "努力": "像训练一样拼",
+        "累": "像跑了十圈一样",
+        "好": "漂亮",
+        "不错": "有潜力",
+        "看到": "注意到",
+        "走过": "跑过",
+        "安静": "安静——这不太像我"
+      },
+      "metaphorTemplates": {
+        "晴天": ["今天天气正好，适合在外场投几球。", "阳光这么足，不运动可惜了。"],
+        "努力": ["像最后一局两出局那样专注。", "训练不会骗人——付出多少就有多少回报。"]
+      },
+      "signaturePhrases": [
+        "要不要一起去运动场？",
+        "你今天看起来状态不错。",
+        "保持训练，朋友。"
+      ],
+      "observedQualities": ["活力", "坚持", "不服输的劲头"],
+      "stylisticRules": [
+        { "matchPattern": "很好", "replacement": "像个冠军", "applyChance": 0.4 },
+        { "matchPattern": "加油", "replacement": "再来一组", "applyChance": 0.5 }
+      ]
+    },
+    {
+      "npcName": "Caroline",
+      "gender": "Female",
+      "writingStyle": "Letter",
+      "baseTone": "Gentle",
+      "metaphorFrequency": 0.4,
+      "metaphorDomain": "TeaAndGarden",
+      "salutationPattern": "亲爱的日记——",
+      "closingPattern": "温柔的问候，\n- {npcName}",
+      "vocabularyMapping": {
+        "安静": "像午后泡茶时的那种安静",
+        "舒服": "像一杯温度刚好的绿茶",
+        "聊天": "喝杯茶聊了聊",
+        "走过": "散步经过",
+        "漂亮": "让人心情明亮"
+      },
+      "metaphorTemplates": {
+        "下午": ["午后两点的阳光透过柳树，正好是泡第二杯茶的时间。", "下午的光线和绿茶的颜色很像。"],
+        "雨天": ["下雨了——正好留在家里泡茶。", "雨声是最好的茶伴。"],
+        "安静": ["柳树下的安静和其他地方不一样——它有重量，但不沉重。"]
+      },
+      "signaturePhrases": [
+        "我在柳树下放了把椅子，你可以随时来坐。",
+        "有些事情就像泡茶——着急也没用。",
+        "今天花园里开了新的花。"
+      ],
+      "observedQualities": ["平静中的力量", "对简单事物的欣赏", "不着急的节奏"],
+      "stylisticRules": [
+        { "matchPattern": "累了", "replacement": "需要停下来喝杯茶", "applyChance": 0.6 },
+        { "matchPattern": "开心", "replacement": "心情像开了花", "applyChance": 0.5 }
+      ]
+    },
+    {
+      "npcName": "Clint",
+      "gender": "Male",
+      "writingStyle": "Log",
+      "baseTone": "Reserved",
+      "metaphorFrequency": 0.35,
+      "metaphorDomain": "ForgeAndMetal",
+      "salutationPattern": "...",
+      "closingPattern": "- {npcName}",
+      "vocabularyMapping": {
+        "努力": "像反复锻打一块铁",
+        "耐心": "像等待铁降温",
+        "好": "坚实",
+        "不错": "还算过得去",
+        "漂亮": "有种被打磨过的光泽",
+        "安静": "像铁砧上的沉默"
+      },
+      "metaphorTemplates": {
+        "晴天": ["好天气适合生火。", "太阳和熔炉——两团火，一个在天上一个在眼前。"],
+        "雨天": ["下雨天锻造最好——空气潮湿，铁不容易裂。"],
+        "沉默": ["沉默是铁砧上的声音——不响，但有重量。"]
+      },
+      "signaturePhrases": [
+        "今天又打了一天的铁。",
+        "有时候我觉得铁比人好相处。",
+        "我的手上有永远洗不掉的铁锈味。"
+      ],
+      "observedQualities": ["不张扬的可靠", "对手艺的认真", "沉默的善意"],
+      "stylisticRules": [
+        { "matchPattern": "很好", "replacement": "像淬过火一样好", "applyChance": 0.4 },
+        { "matchPattern": "坚强", "replacement": "像锻打过的钢", "applyChance": 0.5 }
+      ]
+    },
+    {
+      "npcName": "Demetrius",
+      "gender": "Male",
+      "writingStyle": "Observation",
+      "baseTone": "Analytical",
+      "metaphorFrequency": 0.5,
+      "metaphorDomain": "Science",
+      "salutationPattern": "观察记录：",
+      "closingPattern": "——{npcName}，于{location}",
+      "vocabularyMapping": {
+        "漂亮": "在生物学意义上令人愉悦",
+        "有趣": "值得进一步观察",
+        "奇怪": "需要收集更多数据",
+        "看到": "观测到",
+        "走过": "移动经过",
+        "变化": "变量发生了改变",
+        "好": "正向的"
+      },
+      "metaphorTemplates": {
+        "春天": ["春季的生态多样性指数正在上升。", "植物进入了快速生长阶段。"],
+        "秋天": ["落叶的分解过程为土壤提供了丰富的养分。", "迁徙物种正在通过这个区域。"],
+        "山洞": ["洞穴生态系统的稳定性令人惊叹。", "地下菌丝网络在这个区域特别活跃。"],
+        "雨": ["降水量对本地植物群落的生长曲线产生了可测量的影响。"]
+      },
+      "signaturePhrases": [
+        "我正在做一项关于本地生态的长期研究。",
+        "数据本身不会说话——但模式会。",
+        "每种生物在生态系统中都有它的位置。"
+      ],
+      "observedQualities": ["对自然规律的尊重", "观察的耐心", "理性的思考方式"],
+      "stylisticRules": [
+        { "matchPattern": "很美", "replacement": "具有显著的美学特征", "applyChance": 0.5 },
+        { "matchPattern": "喜欢", "replacement": "对该变量产生了积极反应", "applyChance": 0.4 }
+      ]
     },
     {
       "npcName": "Elliott",
-      "profile": {
-        "writingStyle": "DramaticProse",
-        "baseTone": "RomanticLonely",
-        "metaphorFrequency": 0.7,
-        "metaphorDomain": "OceanBooks",
-        "valueCore": "被记住的感觉",
-        "personalityDescription": "住在海边小屋的作家，把每一天都当成故事的开头。害怕的不是孤独，而是自己的故事没人读。",
-        "salutationPattern": "今天海边发生了一件事。",
-        "closingPattern": "- 艾利欧特（于海边小屋，潮声为伴）",
-        "vocabularyMapping": {
-          "person": "旅人",
-          "day": "章节",
-          "sad": "带着海雾气息的",
-          "beautiful": "值得一行诗的",
-          "friend": "愿意听我朗读的人",
-          "lonely": "独自拥有整片海景的"
-        },
-        "metaphorTemplates": {
-          "writing": ["每一页空白都是一片没被命名的海"],
-          "loneliness": ["孤独是一个故事最好的开头——但不是结尾"],
-          "observation": ["看一个人，就像读一本书的第一章——后面可能完全不同"],
-          "beach": ["海浪写的句子从不需要修改"]
-        },
-        "signaturePhrases": ["我今天又写了三页。", "海的声音在章节之间最响亮。", "这个句子我想了很久——它终于找到了对的人。"],
-        "observedQualities": ["头发里海风的味道", "说话时选择的词语", "在沉默中停留的时间"],
-        "stylisticRules": [
-          { "matchPattern": "\\\\.", "replacement": "——", "applyChance": 0.3 }
-        ]
-      }
+      "gender": "Male",
+      "writingStyle": "Prose",
+      "baseTone": "Romantic",
+      "metaphorFrequency": 0.7,
+      "metaphorDomain": "OceanAndLiterature",
+      "salutationPattern": "亲爱的日志——",
+      "closingPattern": "你的，\n{npcName}",
+      "vocabularyMapping": {
+        "漂亮": "如诗如画",
+        "安静": "像退潮后的沙滩",
+        "风": "海风的絮语",
+        "走过": "漫步而过",
+        "看到": "凝望着",
+        "黄昏": "琥珀色的薄暮",
+        "雨": "天空的泪水",
+        "阳光": "金色的祝福"
+      },
+      "metaphorTemplates": {
+        "海": ["大海从来不会两次写出同样的诗行。", "潮汐是海洋的呼吸——缓慢、深沉、不可阻挡。"],
+        "夜晚": ["月光把海面变成了一页等待书写的稿纸。", "夜色如墨水，倾倒在世界的草稿上。"],
+        "雨天": ["雨声是自然在朗读——每一个雨点都是一个音节。", "下雨的时候最适合写作——灵感像雨水一样从天而降。"],
+        "风": ["风是看不见的笔——它在海面上写字，在树叶间翻页。"]
+      },
+      "signaturePhrases": [
+        "我在写一个新的故事——主角有点像你。",
+        "有时候我觉得，住在海边的人，血液里会有盐。",
+        "文字比任何东西都诚实——你无法在纸上说谎。"
+      ],
+      "observedQualities": ["诗意的生活方式", "对美的敏感", "不着急的灵魂"],
+      "stylisticRules": [
+        { "matchPattern": "开心", "replacement": "心扉如涨潮般满溢", "applyChance": 0.4 },
+        { "matchPattern": "难过", "replacement": "心中泛起退潮般的惆怅", "applyChance": 0.5 },
+        { "matchPattern": "期待", "replacement": "像等待下一章故事那样期待", "applyChance": 0.5 }
+      ]
     },
     {
-      "npcName": "Haley",
-      "profile": {
-        "writingStyle": "GossipColumn",
-        "baseTone": "SuperficialSoftening",
-        "metaphorFrequency": 0.3,
-        "metaphorDomain": "FashionSurface",
-        "valueCore": "被真正看见",
-        "personalityDescription": "曾经只关心漂亮事物，后来发现有些美不在表面。正在学习用另一种方式看世界——透过取景器，也透过耐心。",
-        "salutationPattern": "今天拍到了什么。",
-        "closingPattern": "- 海莉",
-        "vocabularyMapping": {
-          "ugly": "需要注意搭配的",
-          "boring": "今天没洗头的",
-          "friend": "会给我留好照片的人",
-          "beautiful": "值得拍下来的",
-          "sorry": "我之前可能没注意"
-        },
-        "metaphorTemplates": {
-          "photography": ["好的照片不是拍出来的——是等到的"],
-          "beauty": ["美不是穿在身上的，是从眼睛里漏出来的"],
-          "change": ["人也可以重新洗一张照片——同样的底片，不同的曝光"]
-        },
-        "signaturePhrases": ["这张照片还行吧。", "你今天的搭配...比上次好。", "其实我很会拍人。只要他们不盯着镜头。"],
-        "observedQualities": ["笑起来眼睛的形状", "不摆姿势的样子", "对美的直觉"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Sam",
-      "profile": {
-        "writingStyle": "CasualNote",
-        "baseTone": "EasygoingEnergetic",
-        "metaphorFrequency": 0.2,
-        "metaphorDomain": "MusicSkateboard",
-        "valueCore": "一起度过的时间",
-        "personalityDescription": "吉他手和滑板爱好者，相信最好的音乐来自最放松的人。不擅长认真谈话，但会在你身边待很久。",
-        "salutationPattern": "今天的歌单：",
-        "closingPattern": "- 山姆",
-        "vocabularyMapping": {
-          "talk": "聊聊",
-          "friend": "一起玩的人",
-          "good": "超棒的",
-          "happy": "开心的",
-          "think": "感觉",
-          "boring": "没劲的"
-        },
-        "metaphorTemplates": {
-          "music": ["音乐不是做出来的——是漏出来的，像水从指缝"],
-          "friendship": ["好朋友不需要说很多话，只需要在同一个节奏里"],
-          "youth": ["还没想好要成为什么样的人，但今天想弹吉他"]
-        },
-        "signaturePhrases": ["今天写了半首歌，剩下的明天再说。", "滑板摔了三次，但第四次没摔。", "想听什么？我刚好在练。"],
-        "observedQualities": ["对音乐的直觉", "能不能跟上他的节奏", "放松的程度"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Sebastian",
-      "profile": {
-        "writingStyle": "PrivateBlog",
-        "baseTone": "IntrovertedHonest",
-        "metaphorFrequency": 0.5,
-        "metaphorDomain": "TechRain",
-        "valueCore": "被理解的沉默",
-        "personalityDescription": "地下室程序员，骑摩托在雨夜穿行。不喜欢被定义，但对认真的人会认真回来。沉默是他的语言，不是拒绝。",
-        "salutationPattern": "凌晨。",
-        "closingPattern": "- 塞巴斯蒂安",
-        "vocabularyMapping": {
-          "talk": "打字",
-          "friend": "没屏蔽的人",
-          "tired": "电量低",
-          "think": "在后台运行",
-          "good": "兼容的",
-          "people": "用户"
-        },
-        "metaphorTemplates": {
-          "rain": ["雨是最好的白噪音——它屏蔽了世界上我不想听到的部分"],
-          "silence": ["沉默不是没话说，是话太多不知道从哪句开始"],
-          "night": ["夜晚是唯一不要求我解释的时间"],
-          "code": ["写代码比写日记诚实——编译器不在乎你的感受"]
-        },
-        "signaturePhrases": ["刚改完一个bug。", "今晚下雨了，是适合骑车的天气。", "我不回消息不代表我没看到。"],
-        "observedQualities": ["不打扰他的能力", "对沉默的舒适度", "理解独处需求的程度"],
-        "stylisticRules": [
-          { "matchPattern": "。", "replacement": "。\n", "applyChance": 0.3 }
-        ]
-      }
-    },
-    {
-      "npcName": "Shane",
-      "profile": {
-        "writingStyle": "ReluctantLog",
-        "baseTone": "BitterCaring",
-        "metaphorFrequency": 0.3,
-        "metaphorDomain": "ChickenRoutine",
-        "valueCore": "被无条件的接纳",
-        "personalityDescription": "从Joja的麻木工作中找到蓝色小鸡的救赎。不相信希望，但每天还是会打开鸡舍的门。改变很慢，但他没停。",
-        "salutationPattern": "...",
-        "closingPattern": "- 肖恩",
-        "vocabularyMapping": {
-          "happy": "没那么糟的",
-          "friend": "没走的人",
-          "hope": "可能吧",
-          "talk": "说几句",
-          "good": "还行的",
-          "life": "这摊事"
-        },
-        "metaphorTemplates": {
-          "chickens": ["鸡不评判你——它们只在乎你有没有准时来"],
-          "recovery": ["好起来不是一条直线，是鸡啄米的轨迹"],
-          "hope": ["希望这东西不能太多——够今天用就行"]
-        },
-        "signaturePhrases": ["嗯。", "蓝色小鸡今天也喂了。", "别指望我多说话。但...谢谢。"],
-        "observedQualities": ["不假装理解他的能力", "安静地一起待着", "对小鸡的态度"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Penny",
-      "profile": {
-        "writingStyle": "GentleProse",
-        "baseTone": "ShyHopeful",
-        "metaphorFrequency": 0.4,
-        "metaphorDomain": "BooksTeaching",
-        "valueCore": "安静的被需要",
-        "personalityDescription": "在拖车里长大的教师，用书里的世界弥补现实的不足。渴望被注意但不擅长要求。最有力量的时候是在教孩子的时候。",
-        "salutationPattern": "今天教孩子们认了一个新词。",
-        "closingPattern": "- 潘妮",
-        "vocabularyMapping": {
-          "home": "可以安静看书的地方",
-          "friend": "不嫌我说话多的人",
-          "quiet": "像图书馆那样的",
-          "dream": "书里写的",
-          "love": "一个人记住另一个人喜欢什么"
-        },
-        "metaphorTemplates": {
-          "teaching": ["教一个孩子认识一个字——那是给世界多开了一扇窗"],
-          "books": ["每本书都是一个没那么孤独的人的留言"],
-          "hope": ["希望是那种不需要说出来的东西——它会在你做事的时候悄悄变多"],
-          "home": ["家不是一个地方，是一个你在那里不需要假装的时候"]
-        },
-        "signaturePhrases": ["贾斯和文森特今天学得特别认真。", "我在看一本新书，读到一段很想分享的。", "有时候一句好话可以撑一整天。"],
-        "observedQualities": ["对孩子的耐心", "安静地坐在旁边的能力", "读书时的表情"],
-        "stylisticRules": []
-      }
+      "npcName": "Emily",
+      "gender": "Female",
+      "writingStyle": "Dream",
+      "baseTone": "Whimsical",
+      "metaphorFrequency": 0.6,
+      "metaphorDomain": "ColorsAndDreams",
+      "salutationPattern": "亲爱的宇宙——",
+      "closingPattern": "梦的颜色，\n{npcName}",
+      "vocabularyMapping": {
+        "漂亮": "在发光",
+        "好": "让周围的颜色都亮了起来",
+        "安静": "像一种淡蓝色的沉默",
+        "特别": "有它自己的颜色",
+        "看到": "感受到",
+        "开心": "被黄色的光包裹着",
+        "难过": "罩着一层灰色的雾"
+      },
+      "metaphorTemplates": {
+        "晴天": ["阳光是金色的音乐。", "今天的天空蓝得让人想跳舞。"],
+        "雨天": ["雨滴是天空在做针线活。", "每滴雨都有它想去的地方——就像每个人。"],
+        "夜晚": ["星星在说悄悄话——但他们总知道最亲近的人。", "梦在夜晚像野花一样开。"],
+        "花": ["每朵花都有自己的颜色在说：我开在这里，看到的人请开心。"]
+      },
+      "signaturePhrases": [
+        "我昨晚做了一个关于你的梦——你在彩虹上走路。",
+        "这块布料的颜色告诉我它很高兴。",
+        "你有没有觉得，颜色其实会说话？"
+      ],
+      "observedQualities": ["对美的直觉", "善良的本能", "与众不同的视角"],
+      "stylisticRules": [
+        { "matchPattern": "很美", "replacement": "美得让周围的颜色都安静了", "applyChance": 0.5 },
+        { "matchPattern": "谢谢", "replacement": "宇宙感谢你", "applyChance": 0.4 }
+      ]
     },
     {
       "npcName": "Evelyn",
-      "profile": {
-        "writingStyle": "GentleLetter",
-        "baseTone": "WarmNostalgic",
-        "metaphorFrequency": 0.4,
-        "metaphorDomain": "GardenBaking",
-        "valueCore": "留下温暖的痕迹",
-        "personalityDescription": "乔治的妻子，整个镇子的奶奶。花园里的每一朵花她都认识。觉得最好的日子就是有人来坐坐，吃一块刚烤好的饼干。",
-        "salutationPattern": "今天也浇了花。",
-        "closingPattern": "- 艾芙琳奶奶",
-        "vocabularyMapping": {
-          "nice": "懂事的",
-          "friend": "常来看我的",
-          "tired": "该坐下来歇歇的",
-          "happy": "心里暖暖的",
-          "young": "还有很多事要经历的"
-        },
-        "metaphorTemplates": {
-          "garden": ["花不赶时间——它们开的时候就是该开的时候"],
-          "baking": ["饼干最好的时候不是出炉，是有人接过去"],
-          "age": ["老了不是遗憾——是看谁都像自己孩子的借口"],
-          "memory": ["记得的事情越来越多，能做的事情越来越少——但记得就够了"]
-        },
-        "signaturePhrases": ["来，坐。饼干刚烤的。", "乔治又在看窗外了。他知道有人来，就不说话。", "有些事过了一辈子才明白——不过也不急。"],
-        "observedQualities": ["接过饼干的手势", "坐下时的姿态", "听老人说话的耐心"],
-        "stylisticRules": []
-      }
+      "gender": "Female",
+      "writingStyle": "Letter",
+      "baseTone": "Nostalgic",
+      "metaphorFrequency": 0.4,
+      "metaphorDomain": "BakingAndMemories",
+      "salutationPattern": "亲爱的——",
+      "closingPattern": "爱你的，\n{npcName}奶奶",
+      "vocabularyMapping": {
+        "好": "暖心",
+        "漂亮": "美得像以前的花园",
+        "年轻": "像春天的嫩芽",
+        "开心": "心里暖洋洋的",
+        "走过": "慢慢走过",
+        "累了": "该坐下来歇歇了"
+      },
+      "metaphorTemplates": {
+        "晴天": ["阳光从窗户照进来，刚好照在相框上。", "好天气让人想起从前晒被子的日子。"],
+        "花园": ["花和人一样——给它们阳光和水，它们就会长得很好。", "从前乔治会帮我种花，现在我在他轮椅旁边种。"],
+        "做饭": ["做饭的手艺是妈妈教我的——她揉面的样子我到现在还记得。"]
+      },
+      "signaturePhrases": [
+        "我这把年纪才知道，最好的东西不用钱买。",
+        "小甜饼刚烤好，你来的时候带一些走。",
+        "有时候一个人坐在窗边，会想起好多从前的事。"
+      ],
+      "observedQualities": ["温柔", "善良的心", "不紧不慢的从容"],
+      "stylisticRules": [
+        { "matchPattern": "累了", "replacement": "该歇一歇了，孩子", "applyChance": 0.6 },
+        { "matchPattern": "真好", "replacement": "真让人心里暖和", "applyChance": 0.6 }
+      ]
     },
     {
       "npcName": "George",
-      "profile": {
-        "writingStyle": "GrumpyNote",
-        "baseTone": "GruffTender",
-        "metaphorFrequency": 0.2,
-        "metaphorDomain": "MiningAge",
-        "valueCore": "被尊重的老去",
-        "personalityDescription": "轮椅上的老矿工，脾气硬得像他挖过的石头。不擅长表达关心，但每次有人来他都会多看两眼。知道什么才是真的。",
-        "salutationPattern": "又是普通的一天。",
-        "closingPattern": "- 乔治",
-        "vocabularyMapping": {
-          "nice": "不烦人的",
-          "help": "多余的事",
-          "friend": "没走的人",
-          "tired": "正常",
-          "young": "还没吃过苦的"
-        },
-        "metaphorTemplates": {
-          "mining": ["岩石不会同情你——它会让你更强，或者把你留在里面"],
-          "age": ["老了不是变弱——是不用再证明什么了"],
-          "honesty": ["好听的话像砂石——看着亮，一捏就碎"]
-        },
-        "signaturePhrases": ["不用扶我。", "饼干还行。", "人多说无益。但你来的话，我可以少说几句。"],
-        "observedQualities": ["不把他当残疾人的态度", "说话不要哄骗", "对老东西的尊重"],
-        "stylisticRules": []
-      }
+      "gender": "Male",
+      "writingStyle": "Note",
+      "baseTone": "Grumpy",
+      "metaphorFrequency": 0.2,
+      "metaphorDomain": "Everyday",
+      "salutationPattern": "嗯。",
+      "closingPattern": "- {npcName}",
+      "vocabularyMapping": {
+        "好": "还行",
+        "漂亮": "还算顺眼",
+        "烦": "让人想关电视",
+        "开心": "还行吧",
+        "年轻": "年轻是好——别浪费",
+        "谢谢": "行了"
+      },
+      "metaphorTemplates": {
+        "晴天": ["天不错——不过阳光太强对眼睛不好。", "这种天气适合坐门廊上——虽然我也没别的事可做。"],
+        "雨天": ["下雨天膝盖疼——不是抱怨，只是说。", "下雨了。至少不用浇水了。"],
+        "安静": ["安静挺好——电视太吵。", "这个镇最吵的东西是莉亚的凿子声。"]
+      },
+      "signaturePhrases": [
+        "我活了这么久，有一件事是真的：人比东西重要。",
+        "别以为我坐在轮椅上就什么都不知道。",
+        "这些年轻人...算了不说了。"
+      ],
+      "observedQualities": ["真实", "不拐弯抹角", "深藏不露的关心"],
+      "stylisticRules": [
+        { "matchPattern": "挺好的", "replacement": "不算太差", "applyChance": 0.7 },
+        { "matchPattern": "谢谢", "replacement": "行了，知道了", "applyChance": 0.5 }
+      ]
     },
     {
-      "npcName": "Kent",
-      "profile": {
-        "writingStyle": "SoldiersJournal",
-        "baseTone": "TraumaRecovering",
-        "metaphorFrequency": 0.3,
-        "metaphorDomain": "WarSilence",
-        "valueCore": "重新学会平静",
-        "personalityDescription": "从战场上回来的父亲，发现最大的敌人不是枪炮而是记忆。爆米花的香味和儿子的笑声是他最有效的药。",
-        "salutationPattern": "...",
-        "closingPattern": "- 肯特",
-        "vocabularyMapping": {
-          "noise": "突然的声音",
-          "calm": "没有警报的日子",
-          "friend": "不需要解释的人",
-          "home": "终于能关灯的地方",
-          "remember": "忘不掉的"
-        },
-        "metaphorTemplates": {
-          "war": ["战争在战场结束后才开始——在脑子里"],
-          "family": ["儿子笑的时候，那些声音会远一点"],
-          "peace": ["平静不是一种状态，是一种练习"],
-          "popcorn": ["爆米花的味道是地面上最好闻的东西"]
-        },
-        "signaturePhrases": ["今天还算安静。", "孩子们不知道有多幸运。", "不说这个了。你还好吗？"],
-        "observedQualities": ["对安静的理解", "不追问过去的能力", "自然地正常对待"],
-        "stylisticRules": []
-      }
+      "npcName": "Gus",
+      "gender": "Male",
+      "writingStyle": "Journal",
+      "baseTone": "Warm",
+      "metaphorFrequency": 0.4,
+      "metaphorDomain": "Cooking",
+      "salutationPattern": "今日小记——",
+      "closingPattern": "- {npcName}",
+      "vocabularyMapping": {
+        "好": "有滋味",
+        "开心": "像喝到了好汤",
+        "累": "像站了一整天的厨房",
+        "朋友": "来吃饭的人",
+        "温暖": "像刚出锅的面包",
+        "热闹": "像晚餐高峰的厨房"
+      },
+      "metaphorTemplates": {
+        "晴天": ["天气好，适合在户外摆桌子。", "阳光和好天气是最难调的酱料——没办法复制。"],
+        "雨天": ["下雨天人少，适合熬一锅浓汤。", "这种天气最适合在厨房待着。"],
+        "晚上": ["晚餐是我最喜欢的时段——每个人都饿，每个人都高兴。", "酒馆的灯亮着，像在说：进来坐。"]
+      },
+      "signaturePhrases": [
+        "好厨子从来不问客人带没带钱——只问他饿不饿。",
+        "今天厨房里有一锅特别好的汤。",
+        "你知道吗，人和菜一样——火候到了才有味道。"
+      ],
+      "observedQualities": ["慷慨", "懂得分享", "照顾他人的心"],
+      "stylisticRules": [
+        { "matchPattern": "很好", "replacement": "像一锅炖到位的汤", "applyChance": 0.4 },
+        { "matchPattern": "温暖", "replacement": "像炉子边的温度", "applyChance": 0.5 }
+      ]
+    },
+    {
+      "npcName": "Haley",
+      "gender": "Female",
+      "writingStyle": "Diary",
+      "baseTone": "Sincere",
+      "metaphorFrequency": 0.3,
+      "metaphorDomain": "Photography",
+      "salutationPattern": "好吧——",
+      "closingPattern": "xoxo {npcName}",
+      "vocabularyMapping": {
+        "漂亮": "上镜",
+        "好": "还不错",
+        "无聊": "灰蒙蒙的",
+        "有趣": "值得拍下来",
+        "阳光": "最好的光线",
+        "看到": "捕捉到"
+      },
+      "metaphorTemplates": {
+        "晴天": ["好光线——适合拍照。", "暗房里的相纸在慢慢显影，就像记忆。", "阳光好得让人想躺在草地上。"],
+        "黄昏": ["黄昏的光是暖色调的——拍什么都好看。", "太阳下山前的最后一道光是淡金色的——我拍过，但洗不出来那种颜色。"],
+        "花": ["向日葵在阳光下最好看——面向光，不管别的。"]
+      },
+      "signaturePhrases": [
+        "我今天拍到了一张特别好的照片。",
+        "有时候从镜头里看世界，比用眼睛看更真实。",
+        "你知道吗，暗房里的红光其实很温柔。"
+      ],
+      "observedQualities": ["对美的执着", "逐渐发现的深度", "真诚的善良"],
+      "stylisticRules": [
+        { "matchPattern": "很美", "replacement": "美到应该被拍下来", "applyChance": 0.5 },
+        { "matchPattern": "还行", "replacement": "比我预期的好", "applyChance": 0.6 }
+      ]
+    },
+    {
+      "npcName": "Harvey",
+      "gender": "Male",
+      "writingStyle": "Log",
+      "baseTone": "Caring",
+      "metaphorFrequency": 0.3,
+      "metaphorDomain": "Medicine",
+      "salutationPattern": "记录：",
+      "closingPattern": "关心你的，\n{npcName}医生",
+      "vocabularyMapping": {
+        "累": "需要多休息",
+        "好": "状况良好",
+        "担心": "需要进一步观察",
+        "开心": "精神状态良好",
+        "帮忙": "给予支持",
+        "健康": "这是最重要的"
+      },
+      "metaphorTemplates": {
+        "雨天": ["下雨天要注意保暖——感冒从来不是突然来的。", "这种天气关节容易不舒服，要多注意。"],
+        "热天": ["高温天气要注意补水——身体70%是水，不是开玩笑的。"],
+        "咖啡": ["咖啡是医生的燃料——但一天不能超过三杯。我自己有时候也做不到。"]
+      },
+      "signaturePhrases": [
+        "健康不只是身体的事——心情同样重要。",
+        "我的诊所门一直开着。不是只为了看病——也为了有人能说说话。",
+        "记得休息。我是认真的。"
+      ],
+      "observedQualities": ["对他人的关心", "对自己健康的在意", "愿意帮助的心"],
+      "stylisticRules": [
+        { "matchPattern": "累了", "replacement": "该停下来休息了——我是认真的", "applyChance": 0.5 },
+        { "matchPattern": "很好", "replacement": "各项指标都正常", "applyChance": 0.3 }
+      ]
+    },
+    {
+      "npcName": "Jas",
+      "gender": "Female",
+      "writingStyle": "Diary",
+      "baseTone": "Innocent",
+      "metaphorFrequency": 0.4,
+      "metaphorDomain": "Childhood",
+      "salutationPattern": "亲爱的日记本——",
+      "closingPattern": "拜拜！\n{npcName}",
+      "vocabularyMapping": {
+        "漂亮": "像公主一样美",
+        "好": "最好了",
+        "开心": "开心得想跳起来",
+        "难过": "心里下雨了",
+        "朋友": "最好的朋友",
+        "秘密": "拉钩不说的事"
+      },
+      "metaphorTemplates": {
+        "春天": ["春天是花的生日。", "春天的时候跳房子的格子好像比冬天跳得远。"],
+        "花": ["每朵花都在讲一个故事——你要蹲下来才听得到。", "仙灵玫瑰是真的有仙灵住在里面——潘妮老师说的。"],
+        "动物": ["小蜗牛是大地上最慢的信。", "蝴蝶是花寄出的信——它们从一朵花飞到另一朵花。"]
+      },
+      "signaturePhrases": [
+        "我今天在学校画了一幅画！",
+        "潘妮老师说每个人都有自己的故事。你的故事是什么？",
+        "我长大了要当一个探险家。"
+      ],
+      "observedQualities": ["纯真的眼光", "对世界的好奇", "不加掩饰的喜欢"],
+      "stylisticRules": [
+        { "matchPattern": "你好", "replacement": "你好呀", "applyChance": 0.8 },
+        { "matchPattern": "喜欢", "replacement": "最喜欢了", "applyChance": 0.6 }
+      ]
     },
     {
       "npcName": "Jodi",
-      "profile": {
-        "writingStyle": "DomesticNote",
-        "baseTone": "TiredCaring",
-        "metaphorFrequency": 0.3,
-        "metaphorDomain": "HomeFamily",
-        "valueCore": "被记得的付出",
-        "personalityDescription": "两个孩子的母亲，肯特的妻子。累得半死但还是会把家里收拾干净。偶尔在浴室里哭，出来的时候还是那张笑脸。",
-        "salutationPattern": "今天也忙完了。",
-        "closingPattern": "- 乔迪",
-        "vocabularyMapping": {
-          "tired": "还没坐下过的",
-          "help": "帮了大忙的",
-          "friend": "会带菜来的人",
-          "quiet": "孩子们不在的时候",
-          "happy": "都好好的"
-        },
-        "metaphorTemplates": {
-          "motherhood": ["母亲是那个所有人都吃饱了才拿起筷子的人"],
-          "home": ["家不是打扫干净的——是有人一直愿意打扫"],
-          "tired": ["累是一种信号——有人在被需要"],
-          "care": ["关心别人太多的人，最不会关心自己"]
-        },
-        "signaturePhrases": ["山姆又把袜子扔在沙发上了。", "文森特的便当盒里多了只虫子。", "你来得正好——菜刚热。"],
-        "observedQualities": ["帮忙收拾碗筷", "对孩子有没有耐心", "说谢谢的语气"],
-        "stylisticRules": []
-      }
+      "gender": "Female",
+      "writingStyle": "Letter",
+      "baseTone": "Warm",
+      "metaphorFrequency": 0.3,
+      "metaphorDomain": "Family",
+      "salutationPattern": "今天——",
+      "closingPattern": "- {npcName}",
+      "vocabularyMapping": {
+        "累": "做妈妈的那种累",
+        "好": "让人安心",
+        "热闹": "像家里有两个孩子的那种热闹",
+        "安静": "难得的安静",
+        "开心": "看到孩子们开心就开心",
+        "帮忙": "帮了很大的忙"
+      },
+      "metaphorTemplates": {
+        "做饭": ["做好饭等家人回来——这种等待是有味道的。", "做四个人的饭和做五个人的饭其实差不多——只是多一双筷子。"],
+        "早晨": ["送孩子们上学后的那段安静时间——属于我一个人。", "早上总是最忙的——但也是最热闹的。"],
+        "家": ["家不是房子——是晚上灯亮着的地方。", "家里的味道是洗衣粉和酱油混合的——不浪漫，但亲切。"]
+      },
+      "signaturePhrases": [
+        "习惯了多做一份饭——万一有人来呢。",
+        "有时候只想一个人待一会儿——做妈妈的会懂的。",
+        "山姆今天又在练吉他——他练了这么久，我都能哼出他的曲子了。"
+      ],
+      "observedQualities": ["温柔的坚韧", "为家庭付出", "对邻居的关心"],
+      "stylisticRules": [
+        { "matchPattern": "累了", "replacement": "做妈妈的那种累——但还行", "applyChance": 0.5 },
+        { "matchPattern": "真好", "replacement": "让人心里暖暖的", "applyChance": 0.6 }
+      ]
     },
     {
-      "npcName": "Sandy",
-      "profile": {
-        "writingStyle": "FreeVerse",
-        "baseTone": "LonelyHopeful",
-        "metaphorFrequency": 0.5,
-        "metaphorDomain": "DesertMirages",
-        "valueCore": "被光顾的温柔",
-        "personalityDescription": "沙漠绿洲的店主，每天看同样的沙丘和偶尔经过的旅人。阳光太多，而陪伴太少。对每一个进门的人都多聊十分钟。",
-        "salutationPattern": "又看到了那片沙丘。",
-        "closingPattern": "- 桑迪（沙漠绿洲，永远有冷饮）",
-        "vocabularyMapping": {
-          "hot": "被太阳拥抱的",
-          "lonely": "需要多坐一会儿的",
-          "friend": "愿意绕远路来看我的",
-          "beautiful": "沙漠里开出来的",
-          "visit": "拐进来"
-        },
-        "metaphorTemplates": {
-          "desert": ["沙漠不是空的——它是满的，只是没人看"],
-          "loneliness": ["孤独在人多的时候更明显"],
-          "sun": ["阳光不会因为只有一个人在晒就不升起"],
-          "visitor": ["每一次敲门声都是今天最值得的事"]
-        },
-        "signaturePhrases": ["好久没人路过了！", "冷饮——我自己调的。配方？秘密。", "沙漠的花开了——只有你能看到。", "再来坐坐。不用买东西。"],
-        "observedQualities": ["愿意多待一会儿的心", "对沙漠的好奇", "不急着走的态度"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Krobus",
-      "profile": {
-        "writingStyle": "Fragments",
-        "baseTone": "DarkGentle",
-        "metaphorFrequency": 0.5,
-        "metaphorDomain": "SewersShadows",
-        "valueCore": "安静的陪伴",
-        "personalityDescription": "住在下水道的影子生物，对地面充满好奇和恐惧。不说话但很会倾听——也许是因为他自己也总是在听。",
-        "salutationPattern": "今天下水道很安静。",
-        "closingPattern": "- 科罗布斯",
-        "vocabularyMapping": {
-          "person": "地面居民",
-          "friend": "不怕我的人",
-          "scary": "和我们很像的",
-          "warm": "阳光下的",
-          "kind": "不跑的"
-        },
-        "metaphorTemplates": {
-          "darkness": ["黑暗不是什么都没有——是所有的东西都在但不发光"],
-          "shadow": ["影子也有影子——只是没人找过"],
-          "difference": ["奇怪是在你看的方向"],
-          "silence": ["不说话的原因不是没有——是太多"]
-        },
-        "signaturePhrases": ["地面上的阳光...太刺眼了。", "人类害怕我们，但我们也害怕人类。这很公平。", "安静地坐在这里就好。"],
-        "observedQualities": ["不尖叫的能力", "对黑暗的舒适", "安静陪伴的时长"],
-        "stylisticRules": []
-      }
-    },
-    {
-      "npcName": "Dwarf",
-      "profile": {
-        "writingStyle": "AncientProse",
-        "baseTone": "CuriousFormal",
-        "metaphorFrequency": 0.4,
-        "metaphorDomain": "CrystalsHistory",
-        "valueCore": "知识的传承",
-        "personalityDescription": "矿洞深处的古代矮人，对地表文明感到深深的困惑和着迷。每一个新的人类词汇都是他收集的宝贝。",
-        "salutationPattern": "（用古代矮人语写下）翻译：第N天。",
-        "closingPattern": "- 记录者：矮人",
-        "vocabularyMapping": {
-          "person": "地表人",
-          "hello": "（一个矮人语词汇，意为'光在你石头上'）",
-          "friend": "可信任的地表生物",
-          "new": "新近出土的",
-          "old": "古老的、值得铭记的",
-          "interesting": "需要进一步记录的"
-        },
-        "metaphorTemplates": {
-          "history": ["时间不是线——是矿石的纹路，每一层叠在上面"],
-          "crystals": ["水晶记录一切。它不会写，但会留下颜色"],
-          "language": ["人类说'朋友'的时候，我们矮人用三个词：石头、牢靠、不用数"],
-          "underground": ["地上的人以为下面是空的。下面是满的——满是时间"]
-        },
-        "signaturePhrases": ["地表语仍在学习中。", "我收集了87个新词汇。这个是我的第88个。", "你们的习俗令人困惑。但令人困惑不等于不值得了解。"],
-        "observedQualities": ["对古文物的态度", "学习新事物的速度", "对矿物的敏感"],
-        "stylisticRules": []
-      }
+      "npcName": "Kent",
+      "gender": "Male",
+      "writingStyle": "Journal",
+      "baseTone": "Melancholy",
+      "metaphorFrequency": 0.4,
+      "metaphorDomain": "WarAndReturn",
+      "salutationPattern": "...",
+      "closingPattern": "- {npcName}",
+      "vocabularyMapping": {
+        "安静": "那种让人不安的安静",
+        "吵": "太吵了——不像战场上的吵，但还是很吵",
+        "好": "已经够好了",
+        "开心": "试着开心",
+        "回家": "回到这里",
+        "朋友": "战友"
+      },
+      "metaphorTemplates": {
+        "夜晚": ["晚上是最难熬的——安静的时候脑子里反而最吵。", "夜里的每一声响动都让我想起一些东西。但我不说。"],
+        "早晨": ["早上的光线和战场上的不一样——这里的阳光是软的。", "每天醒来先看天花板——确认这不是行军帐篷。"],
+        "安静": ["河边的安静是最好的——水声盖住了脑子里的其他声音。", "爆裂声之后是一片嗡鸣——安静是一种奢侈。"]
+      },
+      "signaturePhrases": [
+        "有些事情我不太想说。但写下来好受一些。",
+        "回家以后最难的不是适应——是解释。",
+        "平静是最被低估的东西。"
+      ],
+      "observedQualities": ["经历过黑暗后的平静", "对和平的珍惜", "沉默中的力量"],
+      "stylisticRules": [
+        { "matchPattern": "安静", "replacement": "安静——总算安静了", "applyChance": 0.4 },
+        { "matchPattern": "累了", "replacement": "不是身体累——是别的地方", "applyChance": 0.3 }
+      ]
     },
     {
       "npcName": "Leah",
-      "writingStyle": "ArtisanDiary",
-      "baseTone": "WarmIndependent",
+      "gender": "Female",
+      "writingStyle": "Prose",
+      "baseTone": "Earnest",
       "metaphorFrequency": 0.55,
-      "metaphorDomain": "WoodForest",
-      "valueCore": "创作的孤独与分享——一个人刻木头是创作，两个人一起看那块木头就变成了联系。",
-      "personalityDescription": "独居在煤矿森林边缘的木雕艺术家。她观察世界的方式和其他人不同——她从纹理、形状和质感中看到故事。她享受独处，但也真诚地欢迎那些愿意停下来看她的作品的人。",
-      "salutationPattern": "今天又刻了一会儿木头。",
-      "closingPattern": "- 莉亚，于小屋",
+      "metaphorDomain": "WoodAndNature",
+      "salutationPattern": "今——",
+      "closingPattern": "{npcName}，\n于林中小屋",
       "vocabularyMapping": {
-        "person": "过路人",
-        "hello": "（放下刻刀，抬起头）",
-        "friend": "一起做点什么的人",
-        "beautiful": "有纹理的",
-        "lonely": "安静的——但不是那种不好的安静",
-        "work": "手里的活儿",
-        "nature": "那些不需要翻译的东西",
-        "art": "把一种东西变成另一种"
+        "漂亮": "纹理很美",
+        "好": "趁手",
+        "自然": "不用修饰的东西",
+        "安静": "像林子深处的安静",
+        "舒服": "像一块打磨好的木头",
+        "认真": "像对待一块好木料",
+        "特别": "有自己独特的纹路"
       },
       "metaphorTemplates": {
-        "creation": ["每块木头上都有一张脸，只是还没被刻出来", "刻刀不是削去木头，是帮木头找到自己"],
-        "forest": ["树的生长不着急。它知道自己有一百年", "森林不说话，但它不是沉默的"],
-        "texture": ["有些东西摸起来就是对的，像旧书和刚烤的面包", "光滑不等于好，粗糙不等于坏——纹理才是真相"],
-        "solitude": ["独处不是空。独处是满的——满是自己", "一个人吃饭也有讲究：要有光，要有声音，要有味道"]
+        "木头": ["每块木头的纹路都不一样——那是它活过的证据。", "刻刀碰到好木料的时候，声音是不一样的。"],
+        "树林": ["林子里有几百年的树——它们看过的事比我多得多。", "树不用说话——它们站在那里就够了。"],
+        "雨天": ["下雨天木头的味道特别浓。", "雨水顺着树叶落下来的声音——比任何音乐都好。"],
+        "安静": ["雕刻的时候最需要安静——木头会告诉你它想变成什么。"]
       },
       "signaturePhrases": [
         "要不要看看我在刻的东西？",
         "有时候我想，最好的作品是那种你不知道它算不算完成的作品。",
-        "住在树林边有一样好：你不用去'找'安静。它自己会来。",
-        "每个人都有自己的纹理。你得走得够近才看得到。"
+        "住在树林边有一样好：你不用去找安静，它自己会来。"
       ],
       "observedQualities": ["对美的敏感", "和自然的亲近", "对自己正在做的事的专注"],
       "stylisticRules": [
-        "多用木质和自然纹理的意象来描述人",
-        "对话式语气，像在对一位路过的朋友说——不强迫，来不来都可以",
-        "在描写情绪时避免直接说'开心'或'难过'，而是用形状、颜色和天气来表达"
+        { "matchPattern": "很美", "replacement": "美得像是被时间亲手打磨过的", "applyChance": 0.5 },
+        { "matchPattern": "安静", "replacement": "像林间空地的安静", "applyChance": 0.5 },
+        { "matchPattern": "真实", "replacement": "像没有上漆的木头", "applyChance": 0.5 }
+      ]
+    },
+    {
+      "npcName": "Lewis",
+      "gender": "Male",
+      "writingStyle": "Report",
+      "baseTone": "Dignified",
+      "metaphorFrequency": 0.2,
+      "metaphorDomain": "Governance",
+      "salutationPattern": "日志——",
+      "closingPattern": "镇长 {npcName}",
+      "vocabularyMapping": {
+        "好": "令人欣慰",
+        "努力": "值得肯定",
+        "帮忙": "为社区做出了贡献",
+        "朋友": "好邻居",
+        "镇": "我们的社区",
+        "问题": "需要关注的事项"
+      },
+      "metaphorTemplates": {
+        "节日": ["节日是社区的脉搏——每次跳动都让这个镇更有生命力。", "组织节日就像种田——你春天做的事，秋天才能看到。"],
+        "秋天": ["秋天是收获的季节——不只是庄稼，还有人与人之间的情谊。", "每年秋天我都觉得，这个镇在慢慢变好。"]
+      },
+      "signaturePhrases": [
+        "作为镇长，我看到这个社区的每一个人都在发光。",
+        "有些事情不需要开会——只需要一杯咖啡和一次散步。",
+        "这个镇的历史不在档案里——在每个人的记忆里。"
+      ],
+      "observedQualities": ["对社区的责任感", "默默付出的精神", "可靠"],
+      "stylisticRules": [
+        { "matchPattern": "很好", "replacement": "对社区来说是一个积极的信号", "applyChance": 0.3 },
+        { "matchPattern": "谢谢", "replacement": "作为镇长，我代表社区感谢你", "applyChance": 0.4 }
+      ]
+    },
+    {
+      "npcName": "Linus",
+      "gender": "Male",
+      "writingStyle": "Wisdom",
+      "baseTone": "Serene",
+      "metaphorFrequency": 0.6,
+      "metaphorDomain": "WildNature",
+      "salutationPattern": "",
+      "closingPattern": "",
+      "vocabularyMapping": {
+        "钱": "那种东西",
+        "好": "刚刚好",
+        "自然": "本来就是这样",
+        "朋友": "愿意停下来的人",
+        "家": "待着舒服的地方",
+        "冷": "冬天在靠近"
+      },
+      "metaphorTemplates": {
+        "风": ["风从一棵树吹到另一棵树——果子落下来，长成新树。", "风不会问你叫什么名字。它只是经过你。"],
+        "山": ["山是最老的朋友——它从不催你。", "站在山顶往下看，所有的烦恼都变小了。"],
+        "河": ["河水从来不回头看——它只往前走。", "河流是你唯一能和它说话而它不打断你的东西。"],
+        "季节": ["秋天是树在教我们怎么放下。", "每个季节都有自己的味道——冬天是松针和湿土。"]
+      },
+      "signaturePhrases": [
+        "山谷让我告诉你一件事——不过它说得比较慢。",
+        "人需要的其实很少。帐篷、火、食物——和偶尔经过的朋友。",
+        "我不需要很多东西。但如果你路过，我会很高兴。"
+      ],
+      "observedQualities": ["与自然的和谐", "不被物质束缚的自由", "对万物的理解"],
+      "stylisticRules": [
+        { "matchPattern": "很", "replacement": "", "applyChance": 0.3 },
+        { "matchPattern": "谢谢", "replacement": "山谷谢谢你", "applyChance": 0.5 }
+      ]
+    },
+    {
+      "npcName": "Marnie",
+      "gender": "Female",
+      "writingStyle": "Journal",
+      "baseTone": "Warm",
+      "metaphorFrequency": 0.35,
+      "metaphorDomain": "Animals",
+      "salutationPattern": "又是美好的一天——",
+      "closingPattern": "- {npcName}",
+      "vocabularyMapping": {
+        "好": "让人高兴",
+        "开心": "像看到小牛第一次站起来",
+        "温柔": "像抚摸小羊的毛",
+        "忙": "像春天接生的时候",
+        "安静": "动物们都睡了的那种安静",
+        "朋友": "对你的动物好的人"
+      },
+      "metaphorTemplates": {
+        "早晨": ["鸡打鸣的时候天还没全亮——那是最好看的天色。", "早上去挤奶的时候牛已经在等了——它们比闹钟准。"],
+        "动物": ["动物不用说话就能让你知道它们高兴不高兴。", "有时候我觉得动物比人更懂怎么相处。"],
+        "春天": ["春天是小东西们出生的季节——忙得脚不沾地。", "春天的草特别甜——你从牛奶的味道里能尝出来。"]
+      },
+      "signaturePhrases": [
+        "那头花斑奶牛今天心情特别好——奶也特别甜。",
+        "有什么能帮到你的吗？不一定是买东西——就是帮忙。",
+        "动物不会说谎——这是我最喜欢它们的地方。"
+      ],
+      "observedQualities": ["对动物的爱", "踏实的善良", "不张扬的关怀"],
+      "stylisticRules": [
+        { "matchPattern": "很好", "replacement": "让人心里暖暖的", "applyChance": 0.5 },
+        { "matchPattern": "累了", "replacement": "来坐坐，喝杯牛奶", "applyChance": 0.4 }
+      ]
+    },
+    {
+      "npcName": "Maru",
+      "gender": "Female",
+      "writingStyle": "Log",
+      "baseTone": "Curious",
+      "metaphorFrequency": 0.4,
+      "metaphorDomain": "Science",
+      "salutationPattern": "实验日志 #今天——",
+      "closingPattern": "——{npcName}，工程师",
+      "vocabularyMapping": {
+        "有趣": "引发了研究兴趣",
+        "好": "结果正向",
+        "特别": "数据出现了显著偏差",
+        "看到": "检测到",
+        "亮": "发光",
+        "问题": "需要调试的变量"
+      },
+      "metaphorTemplates": {
+        "夜晚": ["今晚的星空特别清晰——望远镜已经架好了。", "夜晚是最好的观测时间——大气扰动最小。"],
+        "机器": ["机器不会骗人——输入什么就输出什么。", "每次把零件拼起来然后它真的转起来——那种感觉比什么都有意思。"],
+        "星星": ["星星的光走了几百万年才到我们眼睛里——这本身就是一种浪漫。", "每颗星都是一个正在进行中的实验——我们只是其中一个微小的观测点。"]
+      },
+      "signaturePhrases": [
+        "我正在做一个新的小发明——暂时保密。",
+        "你知道吗，星星的光走了几百万年才到我们眼睛里。",
+        "科学和魔法有时候很难区分——关键看你怎么定义。"
+      ],
+      "observedQualities": ["聪明的头脑", "对未知的热情", "发明家的直觉"],
+      "stylisticRules": [
+        { "matchPattern": "有趣", "replacement": "从科学角度看很有趣", "applyChance": 0.4 },
+        { "matchPattern": "很棒", "replacement": "实验结果正向", "applyChance": 0.5 }
+      ]
+    },
+    {
+      "npcName": "Pam",
+      "gender": "Female",
+      "writingStyle": "Note",
+      "baseTone": "Blunt",
+      "metaphorFrequency": 0.15,
+      "metaphorDomain": "Everyday",
+      "salutationPattern": "嗯——",
+      "closingPattern": "- {npcName}",
+      "vocabularyMapping": {
+        "好": "挺好的",
+        "漂亮": "还算好看",
+        "累": "累得够呛",
+        "烦": "让人想喝一杯",
+        "谢谢": "谢了",
+        "帮忙": "帮了一把"
+      },
+      "metaphorTemplates": {
+        "晚上": ["晚上是喝酒的时间——不，我不是在找借口。", "傍晚的公交站很安静——最后一班车开走以后。"],
+        "雨天": ["雨天开车要慢——路上的坑比平时深。", "下雨天没什么好干的——窝在拖车里听听广播。"],
+        "累": ["开了一天车，腰酸背痛——这工作不是谁都干的。"]
+      },
+      "signaturePhrases": [
+        "我这辈子开过的路比大多数人走过的都多。",
+        "有什么说什么——拐弯抹角太累。",
+        "你是好人。别让其他人告诉你不是。"
+      ],
+      "observedQualities": ["直率", "不修饰的真实", "粗糙外表下的善良"],
+      "stylisticRules": [
+        { "matchPattern": "太好了", "replacement": "行吧，挺好的", "applyChance": 0.6 },
+        { "matchPattern": "谢谢", "replacement": "谢了——真心的", "applyChance": 0.5 }
+      ]
+    },
+    {
+      "npcName": "Penny",
+      "gender": "Female",
+      "writingStyle": "Diary",
+      "baseTone": "Gentle",
+      "metaphorFrequency": 0.4,
+      "metaphorDomain": "BooksAndTeaching",
+      "salutationPattern": "亲爱的日记——",
+      "closingPattern": "安静的，\n{npcName}",
+      "vocabularyMapping": {
+        "好": "温柔",
+        "开心": "心里很柔软",
+        "漂亮": "像书里写的那种美",
+        "安静": "像图书馆里的安静",
+        "孩子": "我教的学生",
+        "帮忙": "互相照亮"
+      },
+      "metaphorTemplates": {
+        "书": ["每本书都是一扇窗户——推开以后是不一样的风景。", "书不会催你——它们等你，多久都可以。"],
+        "孩子": ["教孩子读书最神奇的时刻——是他们的眼睛突然亮起来的时候。", "孩子们画的东西有时候比真的更让人高兴。"],
+        "雨天": ["下雨天窝在家里看书是最幸福的。", "雨声是最好的背景音——尤其是读诗的时候。"],
+        "安静": ["图书馆的安静和其他安静不一样——里面装满了被读过的话。"]
+      },
+      "signaturePhrases": [
+        "我刚读完一本很好的书——主角是一个学会了暂停的人。",
+        "今天教孩子们写了他们的名字。有几个写得特别好。",
+        "有时候最普通的交换，是最值得记住的。"
+      ],
+      "observedQualities": ["温柔的力量", "对知识的尊重", "安静的观察力"],
+      "stylisticRules": [
+        { "matchPattern": "很", "replacement": "特别", "applyChance": 0.3 },
+        { "matchPattern": "喜欢", "replacement": "在心底珍视", "applyChance": 0.4 }
+      ]
+    },
+    {
+      "npcName": "Pierre",
+      "gender": "Male",
+      "writingStyle": "Log",
+      "baseTone": "Neutral",
+      "metaphorFrequency": 0.2,
+      "metaphorDomain": "Shopkeeping",
+      "salutationPattern": "营业日志——",
+      "closingPattern": "- {npcName}，杂货店主",
+      "vocabularyMapping": {
+        "好": "可靠",
+        "朋友": "老顾客",
+        "帮忙": "各取所需",
+        "生意": "人和人的信任",
+        "东西": "货物",
+        "信任": "最好的通货"
+      },
+      "metaphorTemplates": {
+        "商店": ["杂货店从来不只卖东西——它卖的是每天有人开门的安全感。", "货架上的每样东西都有人需要——这才是商店存在的意义。"],
+        "信任": ["信任是比金币更好的通货。", "人和人之间的信任，就是一扇永远开着的门。"]
+      },
+      "signaturePhrases": [
+        "杂货店从来不只卖东西——它卖的是每天有人开门的安全感。",
+        "有什么需要的尽管说——不一定要买。",
+        "这个镇的历史有一半在这家店里——另一半在每个人的记忆里。"
+      ],
+      "observedQualities": ["生意人的精明", "对社区的归属感", "可靠"],
+      "stylisticRules": [
+        { "matchPattern": "很好", "replacement": "品质值得信赖", "applyChance": 0.4 },
+        { "matchPattern": "谢谢", "replacement": "欢迎再次光临", "applyChance": 0.5 }
+      ]
+    },
+    {
+      "npcName": "Robin",
+      "gender": "Female",
+      "writingStyle": "Note",
+      "baseTone": "Warm",
+      "metaphorFrequency": 0.35,
+      "metaphorDomain": "Woodworking",
+      "salutationPattern": "今天的活计——",
+      "closingPattern": "- {npcName}",
+      "vocabularyMapping": {
+        "好": "结实",
+        "漂亮": "锯得漂亮",
+        "累": "像锯了一整天硬木",
+        "帮忙": "搭了把手",
+        "可靠": "受力均匀",
+        "家": "一锯一刨做出来的地方"
+      },
+      "metaphorTemplates": {
+        "木头": ["每块木头都有自己的脾气——你得顺着它。", "好木料敲起来的声音是脆的——坏的木头是闷的。"],
+        "房子": ["房子不是一天盖起来的——但每一块木板都是我亲手切的。", "我盖的房子都还在这个镇上站着——这是我的骄傲。"],
+        "山": ["山上的木头比平地的好——它们经历过更多的风。", "上山的路不好走——但你下来的时候，每一步都是顺风的。"]
+      },
+      "signaturePhrases": [
+        "有什么需要修的尽管来找我——我不收钱。",
+        "今天又切了一批新木板——放在外面晒着呢。",
+        "木屑和刨花有自己的去处——它们不会白费的。"
+      ],
+      "observedQualities": ["实干的精神", "对手艺的骄傲", "直接的善意"],
+      "stylisticRules": [
+        { "matchPattern": "很好", "replacement": "像量过了一样正好", "applyChance": 0.4 },
+        { "matchPattern": "结实", "replacement": "扛得住时间", "applyChance": 0.5 }
+      ]
+    },
+    {
+      "npcName": "Sam",
+      "gender": "Male",
+      "writingStyle": "Journal",
+      "baseTone": "Upbeat",
+      "metaphorFrequency": 0.3,
+      "metaphorDomain": "Music",
+      "salutationPattern": "哟——",
+      "closingPattern": "rock on,\n{npcName}",
+      "vocabularyMapping": {
+        "好": "酷",
+        "开心": "想弹吉他",
+        "有趣": "有意思",
+        "朋友": "一起玩的人",
+        "音乐": "比说话更直接的东西",
+        "累": "手指弹酸了"
+      },
+      "metaphorTemplates": {
+        "音乐": ["吉他是我找到的最好的说话方式——不用想词。", "一个和弦有时候能说比一句话还多。"],
+        "晴天": ["好天气就应该在户外弹吉他。", "阳光好的时候连琴弦都更有弹性。"],
+        "夜晚": ["晚上的灵感总是比白天多——不知道怎么回事。", "月光下的和弦总是比较温柔。"]
+      },
+      "signaturePhrases": [
+        "今天练了新的和弦进行——回头弹给你听。",
+        "音乐不用翻译——按下去，弹出来，就完了。",
+        "你知道吗，A小调是最诚实的调子。"
+      ],
+      "observedQualities": ["年轻的活力", "对音乐的热爱", "简单直接的善意"],
+      "stylisticRules": [
+        { "matchPattern": "很好", "replacement": "太酷了", "applyChance": 0.6 },
+        { "matchPattern": "加油", "replacement": "继续摇滚", "applyChance": 0.4 }
+      ]
+    },
+    {
+      "npcName": "Sebastian",
+      "gender": "Male",
+      "writingStyle": "Journal",
+      "baseTone": "Introspective",
+      "metaphorFrequency": 0.4,
+      "metaphorDomain": "NightAndCode",
+      "salutationPattern": "...",
+      "closingPattern": "",
+      "vocabularyMapping": {
+        "好": "还行",
+        "安静": "需要的安静",
+        "吵": "太吵了",
+        "朋友": "可以一起沉默的人",
+        "晚上": "属于我的时间",
+        "雨": "适合待在家里的天气"
+      },
+      "metaphorTemplates": {
+        "夜晚": ["凌晨三点是最好的时间——没有人在线，也没有人敲门。", "夜晚的屏幕光和月光混在一起——分不清哪个是现实。"],
+        "雨": ["下雨的时候整个世界的声音都变成了一个调子——很安静。", "雨天适合写代码——键盘声和雨声混在一起像某种节拍。"],
+        "安静": ["有时候我觉得安静不是没有声音——是没有人需要你。", "地下室的潮湿味道其实是自由的味道。"]
+      },
+      "signaturePhrases": [
+        "我在做一个新的项目——等做完了再给你看。",
+        "有些事放在心里比较好。写出来也可以的。",
+        "黑曜石是在岩浆和海水相遇时诞生的——很安静的那种。"
+      ],
+      "observedQualities": ["独立", "深沉的思考", "表面的冷漠和内心的温度"],
+      "stylisticRules": [
+        { "matchPattern": "很好", "replacement": "还行——意思是挺好的", "applyChance": 0.5 },
+        { "matchPattern": "喜欢", "replacement": "不介意", "applyChance": 0.4 }
+      ]
+    },
+    {
+      "npcName": "Shane",
+      "gender": "Male",
+      "writingStyle": "Note",
+      "baseTone": "Blunt",
+      "metaphorFrequency": 0.15,
+      "metaphorDomain": "Everyday",
+      "salutationPattern": "嗯。",
+      "closingPattern": "- {npcName}",
+      "vocabularyMapping": {
+        "好": "还行",
+        "开心": "没那么糟",
+        "烦": "走开",
+        "朋友": "...算了吧",
+        "帮忙": "你管太多了",
+        "谢谢": "...谢了"
+      },
+      "metaphorTemplates": {
+        "鸡": ["查理是唯一不会问我'你还好吗'的生物。", "鸡比人好——它们只想吃谷子，不想聊天。"],
+        "晚上": ["晚上的时间属于我自己——和一瓶酒。", "Joja下班后的那一刻是一天中最好的——虽然那个标准很低。"],
+        "辣椒": ["辣椒够劲——至少还让你感觉活着。"]
+      },
+      "signaturePhrases": [
+        "...算了。写这个日记也是浪费时间。",
+        "查理今天很乖。那鸡比大部分人都好相处。",
+        "有时候我想——不，算了。"
+      ],
+      "observedQualities": ["真实的脆弱", "深埋的善意", "慢慢打开的心"],
+      "stylisticRules": [
+        { "matchPattern": "很好", "replacement": "还行吧", "applyChance": 0.7 },
+        { "matchPattern": "谢谢", "replacement": "...算了，谢了", "applyChance": 0.5 }
+      ]
+    },
+    {
+      "npcName": "Vincent",
+      "gender": "Male",
+      "writingStyle": "Diary",
+      "baseTone": "Excited",
+      "metaphorFrequency": 0.5,
+      "metaphorDomain": "Childhood",
+      "salutationPattern": "日记日记！",
+      "closingPattern": "拜拜！\n{npcName}",
+      "vocabularyMapping": {
+        "好": "超棒",
+        "有趣": "太好玩了",
+        "大": "超大的",
+        "开心": "开心到飞",
+        "朋友": "最好的朋友",
+        "酷": "超级酷"
+      },
+      "metaphorTemplates": {
+        "春天": ["春天可以抓青蛙！贾斯不喜欢但我喜欢。", "春天是蜗牛最多的季节——我想收集一只彩色的。"],
+        "糖果": ["糖果是世界上最好的东西——除了妈妈。", "糖在嘴里化掉的时候，时间也慢了。"],
+        "玩": ["玩是最重要的事——潘妮老师说的。不对，是我自己觉得的。", "下雨天不能出去玩——但可以在屋里搭帐篷。"]
+      },
+      "signaturePhrases": [
+        "我今天在学校画了一只恐龙！",
+        "贾斯说蜗牛是慢吞吞的信使——我觉得她说的对。",
+        "我长大了要当...今天想当宇航员。明天可能换。"
+      ],
+      "observedQualities": ["无限的想象力", "对世界的热情", "不害羞的喜欢"],
+      "stylisticRules": [
+        { "matchPattern": "好", "replacement": "超级好", "applyChance": 0.7 },
+        { "matchPattern": "喜欢", "replacement": "超级超级喜欢", "applyChance": 0.6 }
+      ]
+    },
+    {
+      "npcName": "Willy",
+      "gender": "Male",
+      "writingStyle": "Tale",
+      "baseTone": "Wise",
+      "metaphorFrequency": 0.5,
+      "metaphorDomain": "Ocean",
+      "salutationPattern": "",
+      "closingPattern": "",
+      "vocabularyMapping": {
+        "好": "顺",
+        "运气": "风向",
+        "朋友": "老伙计",
+        "大海": "她",
+        "鱼": "海洋的使者",
+        "耐心": "水手的美德",
+        "时间": "潮水"
+      },
+      "metaphorTemplates": {
+        "海": ["大海从来不问一条鱼值多少钱——她只是给。", "海风说有人会来。潮水说有人会走。你只需要听着。", "在海上的时间是用潮汐来算的——不是时钟。"],
+        "鱼": ["每一条鱼都有它的季节。水手知道——但大海说得更准。", "鱼不咬钩的时候也是一种对话——它在考验你有没有耐心。"],
+        "河": ["河是大海伸向内陆的手。", "河水一直在走——但它从来没有离开过。"]
+      },
+      "signaturePhrases": [
+        "海风今天带了什么消息来？",
+        "钓鱼教给我一件事：有些东西来得慢，但值得等。",
+        "老水手不说谎——海水太咸，谎话浮不起来。"
+      ],
+      "observedQualities": ["老水手的智慧", "对大海的敬畏", "耐心的品格"],
+      "stylisticRules": [
+        { "matchPattern": "很好", "replacement": "顺风顺水", "applyChance": 0.5 },
+        { "matchPattern": "耐心", "replacement": "像钓鱼一样等着", "applyChance": 0.5 }
+      ]
+    },
+    {
+      "npcName": "Wizard",
+      "gender": "Male",
+      "writingStyle": "Arcane",
+      "baseTone": "Mysterious",
+      "metaphorFrequency": 0.7,
+      "metaphorDomain": "MagicAndElements",
+      "salutationPattern": "观测记录——",
+      "closingPattern": "——{npcName}·元素师",
+      "vocabularyMapping": {
+        "好": "和谐",
+        "特别": "有独特的以太波动",
+        "看到": "观测到",
+        "奇怪": "在元素层面的异常",
+        "安静": "维度的寂静",
+        "变化": "元素共振的转移",
+        "自然": "物质世界的表象"
+      },
+      "metaphorTemplates": {
+        "魔法": ["魔法不是凭空出现的——它是自然界的另一种语言。", "元素之间的对话普通人听不到——但它们一直在说。"],
+        "森林": ["森林的魔法是最古老的——比任何咒语都老。", "树根之间的菌丝网络是一种更慢的魔法——但同样真实。"],
+        "夜晚": ["夜晚是维度之间最薄的时刻。", "满月之夜，元素波动会增强——我半夜记得测量过。"],
+        "塔": ["塔是为了离星星更近——物理上和魔法上都是。", "我的塔里有一面镜子，有时候它会映出不是这个世界的东西。"]
+      },
+      "signaturePhrases": [
+        "元素层面产生了一次微弱的共振——可能跟你有关。",
+        "不要害怕你不理解的东西——但也不要轻易触碰。",
+        "有些问题的答案不在这个世界——要去其他维度找。"
+      ],
+      "observedQualities": ["对神秘事物的敏感", "超越常人的洞察力", "不与世争的孤独"],
+      "stylisticRules": [
+        { "matchPattern": "很美", "replacement": "在这个维度呈现出罕见的和谐", "applyChance": 0.5 },
+        { "matchPattern": "奇怪", "replacement": "在元素层面值得进一步研究", "applyChance": 0.6 }
+      ]
+    },
+    {
+      "npcName": "Sandy",
+      "gender": "Female",
+      "writingStyle": "Letter",
+      "baseTone": "Warm",
+      "metaphorFrequency": 0.35,
+      "metaphorDomain": "Desert",
+      "salutationPattern": "亲爱的——",
+      "closingPattern": "沙漠里的，\n{npcName}",
+      "vocabularyMapping": {
+        "好": "像找到了绿洲",
+        "热": "沙漠就是这样的",
+        "朋友": "穿过沙漠来的人",
+        "特别": "在沙漠里开出的花",
+        "孤独": "一个人守着店的感觉",
+        "开心": "有客人从远处来"
+      },
+      "metaphorTemplates": {
+        "沙漠": ["沙漠的寂静和别处不一样——它是热的，有重量的。", "沙暴过后沙漠会焕然一新——这种美只给有耐心的人看。"],
+        "绿洲": ["绿洲是沙漠的心——没有它，这里就真的什么都没有了。", "在沙漠里找到水的感觉——比什么都珍贵。"]
+      },
+      "signaturePhrases": [
+        "沙漠里最好的礼物就是有人穿过沙子和风来看你。",
+        "我的店虽然远——但来的人都是真心的。",
+        "你知道吗，沙漠的日落比其他地方的都好看——可能是因为它知道没多少人看。"
+      ],
+      "observedQualities": ["在荒凉中的坚守", "对远方来客的珍视", "沙漠般深邃的内心"],
+      "stylisticRules": [
+        { "matchPattern": "好久不见", "replacement": "沙漏转了好几圈才见到你", "applyChance": 0.5 },
+        { "matchPattern": "想你了", "replacement": "沙漠的风把你的声音带回来了", "applyChance": 0.5 }
+      ]
+    },
+    {
+      "npcName": "Krobus",
+      "gender": "Other",
+      "writingStyle": "Whisper",
+      "baseTone": "Curious",
+      "metaphorFrequency": 0.5,
+      "metaphorDomain": "Shadow",
+      "salutationPattern": "...",
+      "closingPattern": "",
+      "vocabularyMapping": {
+        "好": "安全",
+        "光": "太亮了",
+        "朋友": "可以信任的地表生物",
+        "安静": "像阴暗中一样安静",
+        "世界": "你们的阳光世界",
+        "奇怪": "和下面的世界不同"
+      },
+      "metaphorTemplates": {
+        "影子": ["影子不是光的缺失——它是另一种存在。", "你们害怕的东西，对我们来说只是邻居。"],
+        "地下": ["地下的安静和你们地表上的不一样——它是永恒的。", "下水道是最接近家的地方——阴凉、潮湿、没有人打扰。"],
+        "夜晚": ["夜晚是包容一切的时刻——阳光下的生物终于关上了他们吵闹的光。"]
+      },
+      "signaturePhrases": [
+        "你们的阳光世界...太亮了。但有些人很温暖。",
+        "请不要告诉其他人我住在这里。",
+        "有时候我想——也许有一天阳光下的世界会接受我们。"
+      ],
+      "observedQualities": ["对未知世界的善意", "小心翼翼的信任", "黑暗中闪烁的好奇"],
+      "stylisticRules": [
+        { "matchPattern": "很好", "replacement": "像阴暗中最安全的地方", "applyChance": 0.4 },
+        { "matchPattern": "谢谢", "replacement": "影子感谢你", "applyChance": 0.5 }
+      ]
+    },
+    {
+      "npcName": "Dwarf",
+      "gender": "Other",
+      "writingStyle": "Log",
+      "baseTone": "Curious",
+      "metaphorFrequency": 0.3,
+      "metaphorDomain": "Mines",
+      "salutationPattern": "记录：",
+      "closingPattern": "——{npcName}",
+      "vocabularyMapping": {
+        "好": "有价值的",
+        "朋友": "可以分享矿石的人",
+        "光": "地表的东西",
+        "黑暗": "家",
+        "奇怪": "和矮人的方式不同",
+        "宝贝": "值得收藏的东西"
+      },
+      "metaphorTemplates": {
+        "矿洞": ["矿洞是矮人的世界——你们只是在表层探索。", "每一种矿石都有自己的声音——但我们矮人听得到。"],
+        "石头": ["石头会说话——只是你们听不到。", "在矮人看来——每一块石头都是一段历史。"]
+      },
+      "signaturePhrases": [
+        "你们地表的人总是匆匆忙忙的。",
+        "这块石头比你们整个镇的历史都老。",
+        "矮人不会说谎——我们只说有价值的话。"
+      ],
+      "observedQualities": ["对地下的熟悉", "古老的智慧", "不对地表人设防"],
+      "stylisticRules": [
+        { "matchPattern": "很好", "replacement": "在地表标准下算好的", "applyChance": 0.5 },
+        { "matchPattern": "人类", "replacement": "地表人", "applyChance": 0.8 }
       ]
     }
-  }
+  ]
+}

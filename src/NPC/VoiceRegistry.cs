@@ -10,7 +10,7 @@ using StardewModdingAPI;
 namespace EchoesOfTheHollow.NpcProfiles
 {
     /// <summary>
-    /// NPC语音档案注册表 — 加载并提供所有NPC的写作风格配置
+    /// NPC语音档案注册表 -- 加载并提供所有NPC的写作风格配置
     /// Loads and serves all NPC voice profiles.
     /// </summary>
     public class VoiceRegistry
@@ -144,11 +144,24 @@ namespace EchoesOfTheHollow.NpcProfiles
                 "Kent", "Leah", "Lewis", "Linus", "Marnie", "Maru", "Pam", "Penny",
                 "Pierre", "Robin", "Sam", "Sebastian", "Shane", "Vincent", "Willy", "Wizard" };
 
+            // Gender mapping for built-in NPCs
+            var genders = new Dictionary<string, string> {
+                ["Abigail"]="Female",["Alex"]="Male",["Caroline"]="Female",["Clint"]="Male",
+                ["Demetrius"]="Male",["Elliott"]="Male",["Emily"]="Female",["Evelyn"]="Female",
+                ["George"]="Male",["Gus"]="Male",["Haley"]="Female",["Harvey"]="Male",
+                ["Jas"]="Female",["Jodi"]="Female",["Kent"]="Male",["Leah"]="Female",
+                ["Lewis"]="Male",["Linus"]="Male",["Marnie"]="Female",["Maru"]="Female",
+                ["Pam"]="Female",["Penny"]="Female",["Pierre"]="Male",["Robin"]="Female",
+                ["Sam"]="Male",["Sebastian"]="Male",["Shane"]="Male",["Vincent"]="Male",
+                ["Willy"]="Male",["Wizard"]="Male"
+            };
+
             foreach (string name in npcs)
             {
                 _profiles[name] = new NpcVoiceProfile
                 {
                     NpcName = name,
+                    Gender = genders.ContainsKey(name) ? genders[name] : "Other",
                     WritingStyle = "Prose",
                     BaseTone = "Neutral",
                     MetaphorFrequency = 0.3f,
@@ -178,23 +191,26 @@ namespace EchoesOfTheHollow.NpcProfiles
         /// Render a journal entry through this NPC's voice.
         /// Pipeline: template fill → word replacement → metaphor injection → style rules → framing
         /// </summary>
-        public string RenderEntry(string rawText, NpcVoiceProfile voice, Dictionary<string, string> parameters)
+        public string RenderEntry(string rawText, NpcVoiceProfile voice, Dictionary<string, string> parameters, float clarity = 0.5f)
         {
             string text = rawText;
 
-            // Step 1: Parameter substitution (already done by template engine, but re-apply for safety)
             text = StringHelper.ReplaceParameters(text, parameters);
+            text = ApplyGenderVariation(text, voice);
 
-            // Step 2: Vocabulary replacement
-            text = StringHelper.ReplaceWords(text, voice.VocabularyMapping);
+            // Vocabulary: clarity scales chance (30% at 0 → 90% at max)
+            float vocabChance = 0.3f + clarity * 0.6f;
+            if (voice.VocabularyMapping.Count > 0 && RandomHelper.Chance(vocabChance))
+                text = StringHelper.ReplaceWords(text, voice.VocabularyMapping);
 
-            // Step 3: Metaphor injection (probabilistic)
-            if (voice.MetaphorFrequency > 0 && voice.MetaphorTemplates.Count > 0)
+            // Metaphor: clarity scales frequency
+            float effectiveMetaFreq = voice.MetaphorFrequency * (0.2f + clarity * 0.8f);
+            if (effectiveMetaFreq > 0 && voice.MetaphorTemplates.Count > 0)
             {
                 foreach (var concept in voice.MetaphorTemplates.Keys)
                 {
                     if (text.Contains(concept, StringComparison.OrdinalIgnoreCase) &&
-                        RandomHelper.Chance(voice.MetaphorFrequency))
+                        RandomHelper.Chance(effectiveMetaFreq))
                     {
                         var metaphors = voice.MetaphorTemplates[concept];
                         if (metaphors.Count > 0)
@@ -207,29 +223,56 @@ namespace EchoesOfTheHollow.NpcProfiles
                 }
             }
 
-            // Step 4: Stylistic rules
+            // Stylistic rules: clarity scales apply chance
             foreach (var rule in voice.StylisticRules)
             {
-                if (RandomHelper.Chance(rule.ApplyChance))
+                float effectiveChance = rule.ApplyChance * (0.2f + clarity * 0.8f);
+                if (RandomHelper.Chance(effectiveChance))
                 {
-                    try
-                    {
-                        text = System.Text.RegularExpressions.Regex.Replace(
-                            text, rule.MatchPattern, rule.Replacement);
-                    }
-                    catch { /* Skip bad patterns */ }
+                    try { text = System.Text.RegularExpressions.Regex.Replace(text, rule.MatchPattern, rule.Replacement); }
+                    catch { }
                 }
             }
 
-            // Step 5: Signature phrase (30% chance)
-            if (voice.SignaturePhrases.Count > 0 && RandomHelper.Chance(0.3))
-            {
-                string phrase = voice.SignaturePhrases[RandomHelper.Next(voice.SignaturePhrases.Count)];
-                text += " " + phrase;
-            }
+            // Signature phrase: 10% at 0 clarity → 50% at max
+            float sigChance = 0.1f + clarity * 0.4f;
+            if (voice.SignaturePhrases.Count > 0 && RandomHelper.Chance(sigChance))
+                text += " " + voice.SignaturePhrases[RandomHelper.Next(voice.SignaturePhrases.Count)];
 
-            // Step 6: Framing
+            // Framing
             text = $"{voice.SalutationPattern}\n\n{text}\n\n{voice.ClosingPattern.Replace("{npcName}", voice.NpcName)}";
+
+            // Clean Unicode
+            text = StringHelper.CleanUnicode(text);
+            return text;
+        }
+
+        /// <summary>Inject gender-appropriate pronouns and phrasing into rendered text.</summary>
+        private static string ApplyGenderVariation(string text, NpcVoiceProfile voice)
+        {
+            var gendered = voice.Gender switch
+            {
+                "Male" => new Dictionary<string, string>
+                {
+                    ["他"] = "他", ["她"] = "他", ["它"] = "它",
+                    ["那个男孩"] = "他", ["那个女孩"] = "他", ["那人"] = "他",
+                    ["外乡人"] = "外乡人", ["旅人"] = "旅人",
+                },
+                "Female" => new Dictionary<string, string>
+                {
+                    ["他"] = "她", ["她"] = "她",
+                    ["那个男孩"] = "她", ["那个女孩"] = "她", ["那人"] = "她",
+                },
+                _ => new Dictionary<string, string>()
+            };
+
+            // Apply gendered word substitutions within the text
+            foreach (var kv in gendered)
+            {
+                if (kv.Key != kv.Value)
+                    text = System.Text.RegularExpressions.Regex.Replace(
+                        text, kv.Key, kv.Value);
+            }
 
             return text;
         }

@@ -9,8 +9,8 @@ using StardewModdingAPI;
 namespace EchoesOfTheHollow.Systems.Journal
 {
     /// <summary>
-    /// 核心日志系统 — 管理所有记忆条目
-    /// Core Journal System — manages all journal entries.
+    /// 核心日志系统 -- 管理所有记忆条目
+    /// Core Journal System -- manages all journal entries.
     /// </summary>
     public class JournalSystem
     {
@@ -21,6 +21,8 @@ namespace EchoesOfTheHollow.Systems.Journal
 
         private List<JournalEntry> _entries = new();
         private readonly object _lock = new();
+        private readonly Dictionary<string, int> _dailyNpcCounts = new();
+        private int _todayDate;
 
         public int EntryCount { get { lock (_lock) return _entries.Count; } }
         public event Action<JournalEntry>? OnEntryAdded;
@@ -36,12 +38,26 @@ namespace EchoesOfTheHollow.Systems.Journal
             _voiceRegistry = voiceRegistry;
         }
 
-        /// <summary>Add a journal entry</summary>
+        /// <summary>Add a journal entry. Enforces once-per-day-per-NPC for non-player entries.</summary>
         public void AddEntry(JournalEntry entry)
         {
+            if (!entry.IsPlayerEntry && entry.NpcName != "我")
+            {
+                // Daily per-NPC limit: only 1 entry per NPC per day
+                int today = Game1.year * 112 + Utility.getSeasonNumber(Game1.currentSeason) * 28 + Game1.dayOfMonth;
+                if (today != _todayDate) { _dailyNpcCounts.Clear(); _todayDate = today; }
+
+                _dailyNpcCounts.TryGetValue(entry.NpcName, out int count);
+                if (count >= 1) return; // Already wrote about player today
+                _dailyNpcCounts[entry.NpcName] = count + 1;
+            }
+
+            // Clean any Unicode not in SDV font
+            entry.DisplayText = StringHelper.CleanUnicode(entry.DisplayText);
+            entry.PlayerEntryTitle = StringHelper.CleanUnicode(entry.PlayerEntryTitle ?? "");
+
             lock (_lock)
             {
-                // Trim old entries if over limit
                 while (_entries.Count >= ModEntry.Config.MaxJournalEntries)
                     _entries.RemoveAt(0);
 
@@ -49,6 +65,23 @@ namespace EchoesOfTheHollow.Systems.Journal
             }
 
             OnEntryAdded?.Invoke(entry);
+
+            // ── HUD notification: someone's impression deepened ──
+            if (!entry.IsPlayerEntry && entry.NpcName != "我")
+            {
+                string hint = entry.EmotionTag switch
+                {
+                    "Warm" => $"{entry.NpcName} 对你的印象变得温暖了...",
+                    "Melancholy" => $"{entry.NpcName} 带着一丝惆怅想起了你...",
+                    "Curiosity" => $"{entry.NpcName} 对你产生了好奇...",
+                    "Longing" => $"{entry.NpcName} 有点想念你了...",
+                    "Wonder" => $"{entry.NpcName} 被你的一举一动所惊叹...",
+                    "Nostalgia" => $"{entry.NpcName} 怀念与你相关的某个瞬间...",
+                    "Reflection" => $"{entry.NpcName} 在静默中思索着你...",
+                    _ => $"{entry.NpcName} 对你的印象加深了..."
+                };
+                Game1.addHUDMessage(new HUDMessage(hint, HUDMessage.newQuest_type));
+            }
 
             if (ModEntry.Config.DebugMode)
                 _monitor.Log($"[Journal] New entry: [{entry.NpcName}] {StringHelper.Truncate(entry.DisplayText, 80)}", LogLevel.Debug);

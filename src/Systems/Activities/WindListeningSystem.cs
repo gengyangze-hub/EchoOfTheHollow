@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework;
 namespace EchoesOfTheHollow.Systems.Activities
 {
     /// <summary>
-    /// 听风系统 — stand in specific scenic spots, see color swirls, hear the valley
+    /// 听风系统 -- stand in specific scenic spots, see color swirls, hear the valley
     /// </summary>
     public class WindListeningSystem
     {
@@ -118,7 +118,7 @@ namespace EchoesOfTheHollow.Systems.Activities
                 var entry = new Data.JournalEntry
                 {
                     NpcName = "Linus",
-                    DisplayText = $"山谷的风穿过{Game1.player.Name}的发丝。风告诉我他很轻——风很少这么说一个外来人。在{spot.DisplayName}，风的声音最为清晰。",
+                    DisplayText = $"山谷的风穿过{Game1.player.Name}的发丝。风告诉我他很轻----风很少这么说一个外来人。在{spot.DisplayName}，风的声音最为清晰。",
                     EmotionTag = "Wonder",
                     Trigger = TriggerType.Environmental,
                     DaysPlayed = (int)Game1.stats.DaysPlayed,

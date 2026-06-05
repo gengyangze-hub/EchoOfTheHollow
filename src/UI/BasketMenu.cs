@@ -13,7 +13,7 @@ using StardewValley.Menus;
 namespace EchoesOfTheHollow.UI
 {
     /// <summary>
-    /// 互惠篮界面 — the basket interaction menu.
+    /// 互惠篮界面 -- the basket interaction menu.
     /// Players deposit items with optional requests for NPCs.
     /// Shows active exchanges, pending items, and return notifications.
     /// </summary>
@@ -33,10 +33,6 @@ namespace EchoesOfTheHollow.UI
         private Rectangle _historyTab;
         private Rectangle _closeButton;
         private Rectangle _depositButton;
-        private Rectangle _noteTextBox;
-        private string _requestNote = "";
-        private bool _editingNote;
-
         // Scroll
         private int _scrollOffset;
         private Rectangle _scrollUpButton;
@@ -71,9 +67,6 @@ namespace EchoesOfTheHollow.UI
             // Deposit button
             _depositButton = new Rectangle(menuX + menuW - 160, menuY + menuH + 5, 150, 35);
 
-            // Note text box
-            _noteTextBox = new Rectangle(menuX + 10, menuY + menuH - 60, menuW - 180, 35);
-
             // Scroll
             _scrollUpButton = new Rectangle(menuX + menuW + 5, menuY + 10, 25, 25);
             _scrollDownButton = new Rectangle(menuX + menuW + 5, menuY + menuH - 35, 25, 25);
@@ -99,10 +92,10 @@ namespace EchoesOfTheHollow.UI
             DrawTab(b, _historyTab, $"已完成 ({_historyItems.Count})", _currentTab == 2);
 
             // ── Close button ──
-            DrawButton(b, _closeButton, "✕");
+            DrawButton(b, _closeButton, "X");
 
             // ── Title ──
-            string title = "🧺 互 惠 篮";
+            string title = "互 惠 篮";
             Vector2 titleSize = Game1.dialogueFont.MeasureString(title);
             b.DrawString(Game1.dialogueFont, title,
                 new Vector2(menuX + menuW / 2 - titleSize.X / 2, menuY + 10),
@@ -125,7 +118,7 @@ namespace EchoesOfTheHollow.UI
             int x = menuX + 20;
 
             // ── Instruction ──
-            string instr = "从背包中选择一件物品放入互惠篮。你也可以写一张纸条，说明想要什么作为交换。";
+            string instr = "从背包中选择一件物品放入互惠篮。明天可能会有人来交换。";
             b.DrawString(Game1.smallFont, instr, new Vector2(x, y), new Color(200, 180, 150), 0f, Vector2.Zero, 0.8f, SpriteEffects.None, 0f);
             y += 30;
 
@@ -153,24 +146,14 @@ namespace EchoesOfTheHollow.UI
 
                     // Item name
                     string itemName = $"{item.DisplayName} x{item.Stack}";
-                    if (item.Quality > 0) itemName += " ★";
+                    if (item.Quality > 0) itemName += " +";
                     b.DrawString(Game1.smallFont, itemName, new Vector2(itemX + 60, itemY + 10),
                         selected ? Color.White : new Color(200, 180, 150), 0f, Vector2.Zero, 0.9f, SpriteEffects.None, 0f);
                 }
             }
 
-            // ── Note text box ──
-            string noteLabel = "交换纸条 (选填):";
-            b.DrawString(Game1.smallFont, noteLabel, new Vector2(_noteTextBox.X, _noteTextBox.Y - 22),
-                new Color(200, 180, 150), 0f, Vector2.Zero, 0.8f, SpriteEffects.None, 0f);
-            b.Draw(Game1.fadeToBlackRect, _noteTextBox, new Color(40, 30, 20, 200));
-            b.DrawString(Game1.smallFont, string.IsNullOrEmpty(_requestNote) ? "在此输入你想说的话..." : _requestNote,
-                new Vector2(_noteTextBox.X + 5, _noteTextBox.Y + 8),
-                string.IsNullOrEmpty(_requestNote) ? new Color(120, 100, 80) : new Color(220, 200, 170),
-                0f, Vector2.Zero, 0.8f, SpriteEffects.None, 0f);
-
             // ── Deposit button ──
-            DrawButton(b, _depositButton, "放入互惠篮 →");
+            DrawButton(b, _depositButton, "放入互惠篮");
         }
 
         private void DrawPendingTab(SpriteBatch b, int menuX, int menuY, int menuW, int menuH)
@@ -191,9 +174,9 @@ namespace EchoesOfTheHollow.UI
                 int itemY = y + (i - _scrollOffset) * 45;
 
                 string itemName = ResolveItemName(item.ItemId);
-                string display = $"📦 {itemName} x{item.Count}";
-                if (item.Quality > 0) display += " ★";
-                display += $" — 还有 {item.DaysUntilReturn} 天等待时间";
+                string display = $"- {itemName} x{item.Count}";
+                if (item.Quality > 0) display += " +";
+                display += $" -- 还有 {item.DaysUntilReturn} 天等待时间";
 
                 b.DrawString(Game1.smallFont, display, new Vector2(x, itemY), new Color(200, 180, 150), 0f, Vector2.Zero, 0.9f, SpriteEffects.None, 0f);
 
@@ -285,8 +268,7 @@ namespace EchoesOfTheHollow.UI
                 if (_selectedInventoryIndex < items.Count)
                 {
                     var item = items[_selectedInventoryIndex];
-                    bool success = _basket.DepositItem(item.QualifiedItemId, item.Quality, 1,
-                        string.IsNullOrEmpty(_requestNote) ? null : _requestNote);
+                    bool success = _basket.DepositItem(item.QualifiedItemId, item.Quality, 1);
 
                     if (success)
                     {
@@ -294,7 +276,6 @@ namespace EchoesOfTheHollow.UI
                         Game1.addHUDMessage(new HUDMessage($"{item.DisplayName} 放入了互惠篮。", HUDMessage.newQuest_type));
                     }
                     _selectedInventoryIndex = -1;
-                    _requestNote = "";
                 }
                 return;
             }
@@ -324,11 +305,6 @@ namespace EchoesOfTheHollow.UI
                 }
             }
 
-            // Note text box
-            if (_noteTextBox.Contains(x, y))
-            {
-                _editingNote = true;
-            }
         }
 
         public override void receiveRightClick(int x, int y, bool playSound = true) { }
@@ -338,91 +314,7 @@ namespace EchoesOfTheHollow.UI
             _scrollOffset = Math.Max(0, _scrollOffset - direction);
         }
 
-        public override void receiveKeyPress(Microsoft.Xna.Framework.Input.Keys key)
-        {
-            if (!_editingNote) return;
-
-            if (key == Microsoft.Xna.Framework.Input.Keys.Back && _requestNote.Length > 0)
-            {
-                _requestNote = _requestNote[..^1];
-                return;
-            }
-
-            if (key == Microsoft.Xna.Framework.Input.Keys.Enter)
-            {
-                _editingNote = false;
-                return;
-            }
-
-            if (_requestNote.Length >= 80) return;
-
-            // Map XNA Keys to characters for text input
-            char? c = KeyToChar(key);
-            if (c.HasValue)
-                _requestNote += c.Value;
-        }
-
-        /// <summary>Map XNA Keys enum to a typed character, respecting Shift state</summary>
-        private static char? KeyToChar(Microsoft.Xna.Framework.Input.Keys key)
-        {
-            bool shift = Microsoft.Xna.Framework.Input.Keyboard.GetState().IsKeyDown(
-                Microsoft.Xna.Framework.Input.Keys.LeftShift) ||
-                Microsoft.Xna.Framework.Input.Keyboard.GetState().IsKeyDown(
-                Microsoft.Xna.Framework.Input.Keys.RightShift);
-
-            return key switch
-            {
-                Microsoft.Xna.Framework.Input.Keys.A => shift ? 'A' : 'a',
-                Microsoft.Xna.Framework.Input.Keys.B => shift ? 'B' : 'b',
-                Microsoft.Xna.Framework.Input.Keys.C => shift ? 'C' : 'c',
-                Microsoft.Xna.Framework.Input.Keys.D => shift ? 'D' : 'd',
-                Microsoft.Xna.Framework.Input.Keys.E => shift ? 'E' : 'e',
-                Microsoft.Xna.Framework.Input.Keys.F => shift ? 'F' : 'f',
-                Microsoft.Xna.Framework.Input.Keys.G => shift ? 'G' : 'g',
-                Microsoft.Xna.Framework.Input.Keys.H => shift ? 'H' : 'h',
-                Microsoft.Xna.Framework.Input.Keys.I => shift ? 'I' : 'i',
-                Microsoft.Xna.Framework.Input.Keys.J => shift ? 'J' : 'j',
-                Microsoft.Xna.Framework.Input.Keys.K => shift ? 'K' : 'k',
-                Microsoft.Xna.Framework.Input.Keys.L => shift ? 'L' : 'l',
-                Microsoft.Xna.Framework.Input.Keys.M => shift ? 'M' : 'm',
-                Microsoft.Xna.Framework.Input.Keys.N => shift ? 'N' : 'n',
-                Microsoft.Xna.Framework.Input.Keys.O => shift ? 'O' : 'o',
-                Microsoft.Xna.Framework.Input.Keys.P => shift ? 'P' : 'p',
-                Microsoft.Xna.Framework.Input.Keys.Q => shift ? 'Q' : 'q',
-                Microsoft.Xna.Framework.Input.Keys.R => shift ? 'R' : 'r',
-                Microsoft.Xna.Framework.Input.Keys.S => shift ? 'S' : 's',
-                Microsoft.Xna.Framework.Input.Keys.T => shift ? 'T' : 't',
-                Microsoft.Xna.Framework.Input.Keys.U => shift ? 'U' : 'u',
-                Microsoft.Xna.Framework.Input.Keys.V => shift ? 'V' : 'v',
-                Microsoft.Xna.Framework.Input.Keys.W => shift ? 'W' : 'w',
-                Microsoft.Xna.Framework.Input.Keys.X => shift ? 'X' : 'x',
-                Microsoft.Xna.Framework.Input.Keys.Y => shift ? 'Y' : 'y',
-                Microsoft.Xna.Framework.Input.Keys.Z => shift ? 'Z' : 'z',
-                Microsoft.Xna.Framework.Input.Keys.Space => ' ',
-                Microsoft.Xna.Framework.Input.Keys.D0 => shift ? ')' : '0',
-                Microsoft.Xna.Framework.Input.Keys.D1 => shift ? '!' : '1',
-                Microsoft.Xna.Framework.Input.Keys.D2 => shift ? '@' : '2',
-                Microsoft.Xna.Framework.Input.Keys.D3 => shift ? '#' : '3',
-                Microsoft.Xna.Framework.Input.Keys.D4 => shift ? '$' : '4',
-                Microsoft.Xna.Framework.Input.Keys.D5 => shift ? '%' : '5',
-                Microsoft.Xna.Framework.Input.Keys.D6 => shift ? '^' : '6',
-                Microsoft.Xna.Framework.Input.Keys.D7 => shift ? '&' : '7',
-                Microsoft.Xna.Framework.Input.Keys.D8 => shift ? '*' : '8',
-                Microsoft.Xna.Framework.Input.Keys.D9 => shift ? '(' : '9',
-                Microsoft.Xna.Framework.Input.Keys.OemPeriod => shift ? '>' : '.',
-                Microsoft.Xna.Framework.Input.Keys.OemComma => shift ? '<' : ',',
-                Microsoft.Xna.Framework.Input.Keys.OemQuestion => shift ? '?' : '/',
-                Microsoft.Xna.Framework.Input.Keys.OemSemicolon => shift ? ':' : ';',
-                Microsoft.Xna.Framework.Input.Keys.OemQuotes => shift ? '"' : '\'',
-                Microsoft.Xna.Framework.Input.Keys.OemPipe => shift ? '|' : '\\',
-                Microsoft.Xna.Framework.Input.Keys.OemOpenBrackets => shift ? '{' : '[',
-                Microsoft.Xna.Framework.Input.Keys.OemCloseBrackets => shift ? '}' : ']',
-                Microsoft.Xna.Framework.Input.Keys.OemMinus => shift ? '_' : '-',
-                Microsoft.Xna.Framework.Input.Keys.OemPlus => shift ? '+' : '=',
-                Microsoft.Xna.Framework.Input.Keys.OemTilde => shift ? '~' : '`',
-                _ => null
-            };
-        }
+        public override void receiveKeyPress(Microsoft.Xna.Framework.Input.Keys key) { }
 
         public override void gameWindowSizeChanged(Rectangle oldBounds, Rectangle newBounds)
         {

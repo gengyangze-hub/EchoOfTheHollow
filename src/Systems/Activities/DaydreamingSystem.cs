@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework;
 namespace EchoesOfTheHollow.Systems.Activities
 {
     /// <summary>
-    /// 发呆系统 — hold a position to auto-sit, camera slowly zooms out
+    /// 发呆系统 -- hold a position to auto-sit, camera slowly zooms out
     /// </summary>
     public class DaydreamingSystem
     {

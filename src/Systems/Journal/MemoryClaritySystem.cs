@@ -6,7 +6,7 @@ using StardewValley;
 namespace EchoesOfTheHollow.Systems.Journal
 {
     /// <summary>
-    /// 记忆清晰度系统 — 替代好感度数字。
+    /// 记忆清晰度系统 -- 替代好感度数字。
     /// 每个NPC对玩家有一个"记忆清晰度"值（仅后台使用，从不显示为数字）。
     /// 清晰度影响：
     ///   - 日志条目的文本细节和情感深度
@@ -59,7 +59,7 @@ namespace EchoesOfTheHollow.Systems.Journal
                 ClarityTier.Recognized => "清楚地记得你是谁",
                 ClarityTier.Clear => "能回忆起很多关于你的细节",
                 ClarityTier.Vivid => "对你的记忆鲜活而具体",
-                ClarityTier.DeeplyEngraved => "把你记得很深——像刻在木头上的名字",
+                ClarityTier.DeeplyEngraved => "把你记得很深----像刻在木头上的名字",
                 _ => "记得你"
             };
         }
@@ -127,10 +127,10 @@ namespace EchoesOfTheHollow.Systems.Journal
             float clarity = GetClarity(npcName);
             return clarity switch
             {
-                < 10 => 0,      // Forgotten — rare entries
-                < 50 => 1,      // Faint or Recognized — one
-                < 75 => 2,      // Clear — up to two
-                _ => 3           // Vivid+ — up to three
+                < 10 => 0,      // Forgotten -- rare entries
+                < 50 => 1,      // Faint or Recognized -- one
+                < 75 => 2,      // Clear -- up to two
+                _ => 3           // Vivid+ -- up to three
             };
         }
 
@@ -179,6 +179,6 @@ namespace EchoesOfTheHollow.Systems.Journal
         Recognized,     // Knows who you are
         Clear,          // Many details remembered
         Vivid,          // Memories are alive and specific
-        DeeplyEngraved  // Carved deep — like a name in wood
+        DeeplyEngraved  // Carved deep -- like a name in wood
     }
 }

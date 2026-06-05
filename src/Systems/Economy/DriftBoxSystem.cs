@@ -9,7 +9,7 @@ using StardewModdingAPI;
 namespace EchoesOfTheHollow.Systems.Economy
 {
     /// <summary>
-    /// 漂流物箱 — 替代出货箱
+    /// 漂流物箱 -- 替代出货箱
     /// Items placed here drift to random town locations for NPCs to find.
     /// </summary>
     public class DriftBoxSystem

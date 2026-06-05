@@ -9,8 +9,8 @@ using StardewModdingAPI;
 namespace EchoesOfTheHollow.Systems.Economy
 {
     /// <summary>
-    /// 互惠篮系统 — 替代金币经济
-    /// Mutual Aid Basket — replaces the gold economy.
+    /// 互惠篮系统 -- 替代金币经济
+    /// Mutual Aid Basket -- replaces the gold economy.
     /// Players deposit items; NPCs may exchange them for other items.
     /// </summary>
     public class BasketSystem
@@ -65,7 +65,7 @@ namespace EchoesOfTheHollow.Systems.Economy
             return true;
         }
 
-        /// <summary>Process daily exchanges — called on DayStarted</summary>
+        /// <summary>Process daily exchanges -- called on DayStarted</summary>
         public void ProcessDailyExchanges()
         {
             if (Game1.player == null) return;
@@ -78,7 +78,7 @@ namespace EchoesOfTheHollow.Systems.Economy
 
                 if (item.DaysUntilReturn <= 0)
                 {
-                    // Time's up — return the item
+                    // Time's up -- return the item
                     ReturnItem(item);
                     continue;
                 }
@@ -175,7 +175,7 @@ namespace EchoesOfTheHollow.Systems.Economy
 
         public void OnInteract()
         {
-            // Opens the basket UI — handled by UI layer
+            // Opens the basket UI -- handled by UI layer
             if (Game1.player?.currentLocation?.Name == "Town" && Context.IsPlayerFree)
             {
                 ModEntry.OpenBasketMenu();

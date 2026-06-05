@@ -6,7 +6,7 @@ using EchoesOfTheHollow.Data;
 namespace EchoesOfTheHollow.Systems.Journal
 {
     /// <summary>
-    /// 玩家日记系统 — allows the player to write their own entries in the journal.
+    /// 玩家日记系统 -- allows the player to write their own entries in the journal.
     /// </summary>
     internal class PlayerDiarySystem
     {

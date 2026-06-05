@@ -9,7 +9,7 @@ using StardewModdingAPI;
 namespace EchoesOfTheHollow.Systems.Activities
 {
     /// <summary>
-    /// 触摸旧物 — interact with hidden relics around the valley.
+    /// 触摸旧物 -- interact with hidden relics around the valley.
     /// Each location has scattered objects that tell silent stories.
     /// </summary>
     public class OldObjectInteraction
@@ -56,7 +56,7 @@ namespace EchoesOfTheHollow.Systems.Activities
     }
 
     /// <summary>
-    /// 追踪动物 — detect when the player is near farm animals or town pets.
+    /// 追踪动物 -- detect when the player is near farm animals or town pets.
     /// Generates gentle journal entries from observing NPCs.
     /// </summary>
     public class AnimalTrackingSystem
@@ -139,7 +139,7 @@ namespace EchoesOfTheHollow.Systems.Activities
             var entry = new JournalEntry
             {
                 NpcName = observer,
-                DisplayText = $"看到{Game1.player.Name}在{location}靠近一只{animalName}。他们之间有一种不需要语言的对话——只是静静地站在彼此旁边。有时候我觉得动物比人更懂得这种沉默。",
+                DisplayText = $"看到{Game1.player.Name}在{location}靠近一只{animalName}。他们之间有一种不需要语言的对话----只是静静地站在彼此旁边。有时候我觉得动物比人更懂得这种沉默。",
                 EmotionTag = "Warm",
                 Trigger = TriggerType.AnimalEncounter,
                 DaysPlayed = (int)Game1.stats.DaysPlayed,
@@ -217,7 +217,7 @@ namespace EchoesOfTheHollow.Systems.Activities
     }
 
     /// <summary>
-    /// 无意义的物品 — craft and place items that serve no purpose,
+    /// 无意义的物品 -- craft and place items that serve no purpose,
     /// generating reflective journal entries.
     /// </summary>
     public class MeaninglessItemSystem

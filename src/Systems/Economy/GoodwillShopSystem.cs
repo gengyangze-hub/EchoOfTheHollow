@@ -8,7 +8,7 @@ using StardewValley.Menus;
 namespace EchoesOfTheHollow.Systems.Economy
 {
     /// <summary>
-    /// 好感商店系统 — replaces money with goodwill derived from friendship.
+    /// 好感商店系统 -- replaces money with goodwill derived from friendship.
     /// Shop items are obtained through the Basket exchange paradigm:
     ///   1. You "request" an item from a shop (daily limit applies)
     ///   2. Goodwill cost = vanilla price × multiplier, paid from friendship with shop owner
@@ -159,7 +159,7 @@ namespace EchoesOfTheHollow.Systems.Economy
             denyReason = null;
 
             if (!ModEntry.Config.EnableShopGoodwill)
-                return true; // Goodwill system disabled — free economy mode
+                return true; // Goodwill system disabled -- free economy mode
 
             // ── Check daily limit ──
             if (_todayRequestCount >= ModEntry.Config.MaxDailyShopRequests)
@@ -178,7 +178,7 @@ namespace EchoesOfTheHollow.Systems.Economy
                 string displayName = ShopDisplayNames.TryGetValue(owner, out string? name) ? name : owner;
                 string tierDesc = DescribeFriendship(available);
                 string neededDesc = DescribeFriendship(goodwillCost);
-                denyReason = $"{displayName}{tierDesc}。\n要想换到这件东西，你们的关系需要到{DescribeFriendshipThreshold(goodwillCost)}的程度。\n多一些相处，少一些交换——慢慢来。";
+                denyReason = $"{displayName}{tierDesc}。\n要想换到这件东西，你们的关系需要到{DescribeFriendshipThreshold(goodwillCost)}的程度。\n多一些相处，少一些交换----慢慢来。";
                 return false;
             }
 
@@ -208,7 +208,7 @@ namespace EchoesOfTheHollow.Systems.Economy
             Math.Max(0, ModEntry.Config.MaxDailyShopRequests - _todayRequestCount);
 
         // ═══════════════════════════════════════════════
-        //  Narrative descriptions — no numbers visible
+        //  Narrative descriptions -- no numbers visible
         // ═══════════════════════════════════════════════
 
         /// <summary>Describe a friendship level in narrative terms</summary>
