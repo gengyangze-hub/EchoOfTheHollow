@@ -1,0 +1,446 @@
+{
+  "metadata": { "version": 1, "totalTemplates": 60, "lastUpdated": "2026-06-05" },
+  "templates": [
+    {
+      "templateId": "linus_sees_player_wind_001",
+      "npcName": "Linus",
+      "triggerType": "Environmental",
+      "priority": 7,
+      "cooldownDays": 2,
+      "conditions": { "locations": ["Mountain", "Forest", "Beach"] },
+      "textVariants": [
+        "山谷今晚的风穿过{{playerName}}的头发，风告诉我他很轻。风很少这么说一个外来人。他在{{location}}站了很久，像是也在听。",
+        "{{playerName}}在{{location}}停下了脚步。风绕着他打转，好像在打招呼。山谷记得每一个来过的人的气味。他的气味是新的，但不陌生。"
+      ],
+      "vocabularyHints": ["wind", "valley", "listen"],
+      "emotionTag": "Warm"
+    },
+    {
+      "templateId": "linus_player_away_001",
+      "npcName": "Linus",
+      "triggerType": "OfflinePassage",
+      "priority": 5,
+      "cooldownDays": 1,
+      "conditions": { "minOfflineHours": 12 },
+      "textVariants": [
+        "你走了{{daysAway}}天后，山顶的帐篷被风吹歪了一点。有一只鸟在我帐篷顶上筑了巢，我想它可能是来替你的。但风说你的味道还很新鲜。",
+        "{{daysAway}}天。山谷的溪流声和从前一样，但我数过——少了一个人的脚步声。不是少了就不好，只是...山谷注意到了。"
+      ],
+      "emotionTag": "Longing"
+    },
+    {
+      "templateId": "abby_player_farming_001",
+      "npcName": "Abigail",
+      "triggerType": "Environmental",
+      "priority": 5,
+      "cooldownDays": 3,
+      "conditions": { "observedActions": ["farming", "hoeing", "watering"], "locations": ["Farm"] },
+      "textVariants": [
+        "{{playerName}}又在田里了。泥土裹着他的手指，让我想起自己7岁时挖到第一块紫水晶的感觉。那时候我就知道：有些东西在地下等着，只是还没被人发现。",
+        "今天我路过农场的时候看到{{playerName}}低头干活。他的影子拖得很长，像一把没人用的锄头。我想说不必这么辛苦，但话说回来，我自己不也在挖吗。"
+      ],
+      "emotionTag": "Curiosity"
+    },
+    {
+      "templateId": "abby_player_mining_001",
+      "npcName": "Abigail",
+      "triggerType": "Environmental",
+      "priority": 6,
+      "cooldownDays": 2,
+      "conditions": { "observedActions": ["mining"], "locations": ["Mine", "UndergroundMine"] },
+      "textVariants": [
+        "我听到矿洞里传出了敲击声。{{playerName}}在更深的地方。他一定也在找。矿洞不在乎你找的是什么——石头也好，答案也好——它只在乎你够不够耐心。",
+        "{{playerName}}下矿了。我有时候觉得矿洞是一个倒过来的天空，每向下一步就离地面远一点，离自己近一点。"
+      ],
+      "emotionTag": "Curiosity"
+    },
+    {
+      "templateId": "abby_player_interaction_001",
+      "npcName": "Abigail",
+      "triggerType": "DirectInteraction",
+      "priority": 6,
+      "cooldownDays": 2,
+      "textVariants": [
+        "{{playerName}}今天和我说话了。他说的话很平常，但语气里有种矿石的味道——冷冷的、硬硬的、但其实只要温度够就会发光。我不知道他知不知道这一点。",
+        "和{{playerName}}在{{location}}聊了一会儿。他不像镇上其他人。其他人聊天像是在填表，他聊天像是...在找路。"
+      ],
+      "emotionTag": "Warm"
+    },
+    {
+      "templateId": "emily_player_emotion_001",
+      "npcName": "Emily",
+      "triggerType": "Environmental",
+      "priority": 6,
+      "cooldownDays": 2,
+      "textVariants": [
+        "{{playerName}}走过广场的时候周围的颜色变了——一种我说不出名字的颜色，介于湖水和午后阳光之间。颜色不会说谎。他今天心里有事。",
+        "我看到{{playerName}}在{{location}}站着。他的气场是淡紫色的，有一点透明。那是需要安静的颜色。我没有走过去，但我把一片蓝色的花瓣放在他待过的地方。"
+      ],
+      "emotionTag": "Wonder"
+    },
+    {
+      "templateId": "emily_player_interaction_001",
+      "npcName": "Emily",
+      "triggerType": "DirectInteraction",
+      "priority": 5,
+      "cooldownDays": 3,
+      "textVariants": [
+        "今天和{{playerName}}说话了！他的声音里有一种很好闻的橘色。不是太阳的那种橘——是小火苗的那种。小心翼翼的暖。我觉得他的气场会慢慢展开的。",
+        "{{playerName}}对我说了一句话。那句话的颜色很清澈，像池子里刚放下了什么。他大概不知道自己每说一句话都在画画。但我看到了。"
+      ],
+      "emotionTag": "Warm"
+    },
+    {
+      "templateId": "gus_player_meal_001",
+      "npcName": "Gus",
+      "triggerType": "DirectInteraction",
+      "priority": 5,
+      "cooldownDays": 3,
+      "textVariants": [
+        "{{playerName}}来食堂里坐了一会儿。他点了最简单的那个，什么都没说。但我从他的汤勺声里听出他今天累了。汤勺碰到碗壁的频率——那是一种只有厨房才懂的节奏。我多舀了一勺进去。",
+        "今天食堂里来了{{playerName}}。他吃东西的时候眼睛看着窗外，没有看碗。这通常意味着他不是在吃饭，是在想事情。我的汤陪想事情的人最好——它不抢话。"
+      ],
+      "emotionTag": "Warm"
+    },
+    {
+      "templateId": "gus_player_absence_001",
+      "npcName": "Gus",
+      "triggerType": "Absence",
+      "priority": 4,
+      "cooldownDays": 2,
+      "textVariants": [
+        "{{daysAway}}天没在食堂见到{{playerName}}了。靠窗第三个椅子空着。椅子不知道在等谁，但我知道。今天的汤多熬了一碗——以防万一他今天突然来。汤可以重新热，人不能重新来。"
+      ],
+      "emotionTag": "Longing"
+    },
+    {
+      "templateId": "pam_player_quiet_001",
+      "npcName": "Pam",
+      "triggerType": "Environmental",
+      "priority": 5,
+      "cooldownDays": 3,
+      "conditions": { "timeOfDay": ["evening", "night"] },
+      "textVariants": [
+        "晚上，酒馆。{{playerName}}进来喝了杯东西。他没说话。他没问问题。他没露出那种表情。所以，嗯，这人还行。",
+        "{{playerName}}坐在吧台另一端。我数了数——他从进门到现在说了三句话。很好。世界太吵。沉默是对的。"
+      ],
+      "emotionTag": "Neutral"
+    },
+    {
+      "templateId": "pam_player_nojudge_001",
+      "npcName": "Pam",
+      "triggerType": "DirectInteraction",
+      "priority": 6,
+      "cooldownDays": 2,
+      "textVariants": [
+        "{{playerName}}今天路过的时候瞥了我一眼。那种瞥和其他人的不一样——没有评估，没有计算。只是看到了我，然后继续走。某种程度上，这是我这辈子收到过最好的礼物。"
+      ],
+      "emotionTag": "Melancholy"
+    },
+    {
+      "templateId": "clint_player_fix_001",
+      "npcName": "Clint",
+      "triggerType": "Environmental",
+      "priority": 5,
+      "cooldownDays": 3,
+      "conditions": { "observedActions": ["mining", "foraging"] },
+      "textVariants": [
+        "{{playerName}}送来一件旧工具。不是来修的——他说只是让我看看。我看了一会儿。这工具上有很深的握痕，说明用了很久。我没问他用了多久，也没问他为什么不修。握痕就是故事，不需要解释。",
+        "{{playerName}}的镐子上有几道深口子。好的伤痕——不是坏了，是跟石头说过话。我没磨掉。伤痕留着，工具才活着。"
+      ],
+      "emotionTag": "Reflection"
+    },
+    {
+      "templateId": "clint_player_silence_001",
+      "npcName": "Clint",
+      "triggerType": "DirectInteraction",
+      "priority": 4,
+      "cooldownDays": 3,
+      "textVariants": [
+        "{{playerName}}在我锻炉前站了一会儿。他不像有些人那样到处摸。他只是看着火。火对着他也安静了些。我不知道为什么，但我觉得他大概也经历过被烧红再冷却的过程。"
+      ],
+      "emotionTag": "Reflection"
+    },
+    {
+      "templateId": "caroline_player_tree_001",
+      "npcName": "Caroline",
+      "triggerType": "Environmental",
+      "priority": 6,
+      "cooldownDays": 2,
+      "conditions": { "locations": ["Forest", "Farm"] },
+      "textVariants": [
+        "午后，柳树下。{{playerName}}从旁边走过去。他的步伐不紧不慢，像是没有目的地。这种脚步最值得看。树叶落在他肩上，他没有拨掉。"
+      ],
+      "emotionTag": "Warm"
+    },
+    {
+      "templateId": "caroline_player_absence_001",
+      "npcName": "Caroline",
+      "triggerType": "OfflinePassage",
+      "priority": 5,
+      "cooldownDays": 1,
+      "conditions": { "minOfflineHours": 12 },
+      "textVariants": [
+        "你走了{{daysAway}}天后，那棵柳树下长出一朵你鞋印形状的蘑菇。我不知道是不是巧合，但我把它画下来了。画放在抽屉里。等你回来可以给你看。也可以不给——画存在的意义不一定是被看。"
+      ],
+      "emotionTag": "Nostalgia"
+    },
+    {
+      "templateId": "pierre_player_honest_001",
+      "npcName": "Pierre",
+      "triggerType": "DirectInteraction",
+      "priority": 6,
+      "cooldownDays": 2,
+      "textVariants": [
+        "{{playerName}}今天在店里站了很久，最后什么也没买。他看了看货架，又看了看我，然后说'今天没什么需要的'。这句话比一笔大买卖让我更高兴。他不必编一个借口。",
+        "{{playerName}}说的话和想说的话之间没有缝隙。我不知道他是不是故意的，但这在这个镇上很难得。我今天又没开门——不是因为不营业，是因为不想说谎。他大概明白了。"
+      ],
+      "emotionTag": "Warm"
+    },
+    {
+      "templateId": "pierre_player_absence_001",
+      "npcName": "Pierre",
+      "triggerType": "Absence",
+      "priority": 4,
+      "cooldownDays": 2,
+      "textVariants": [
+        "{{daysAway}}天。店里的一个位置空着。那个从来不买东西只看货架的人没来。我关了一天门——不是因为等他，是因为没人值得开门。"
+      ],
+      "emotionTag": "Longing"
+    },
+    {
+      "templateId": "robin_player_space_001",
+      "npcName": "Robin",
+      "triggerType": "Environmental",
+      "priority": 5,
+      "cooldownDays": 3,
+      "conditions": { "locations": ["Farm", "Mountain"] },
+      "textVariants": [
+        "{{playerName}}在扩建农舍。他没有给我图纸——只是用手比划了一下。我最喜欢这种客户。让房子自己决定形状。他的手势里有一种不确定，这正是好设计的开始。",
+        "{{playerName}}来木工房看木材。他摸了摸不同的木头，在橡木前面停得最久。橡木喜欢这样的人——不急着决定，先问木头想要什么。"
+      ],
+      "emotionTag": "Warm"
+    },
+    {
+      "templateId": "maru_player_device_001",
+      "npcName": "Maru",
+      "triggerType": "Environmental",
+      "priority": 5,
+      "cooldownDays": 3,
+      "textVariants": [
+        "{{playerName}}今天看了我做的装置。他注意到那个故意装错的齿轮了——他听了很久的咔嗒声。大部分人只听到噪音。他听到的是它故意的。这个变量很重要。",
+        "我的装置对{{playerName}}响了十七秒。然后他笑了。咔嗒声不是故障，但他懂了。这证明他的听觉系统和我的一样——能听出不完美是故意的。"
+      ],
+      "emotionTag": "Curiosity"
+    },
+    {
+      "templateId": "harvey_player_listen_001",
+      "npcName": "Harvey",
+      "triggerType": "DirectInteraction",
+      "priority": 6,
+      "cooldownDays": 2,
+      "textVariants": [
+        "{{playerName}}推掉了今天的检查——不是说不需要，是说暂时不想。他说的很平静。我注意到了他的心率参数（77，正常偏高），但更重要的指标是他终于敢推掉些什么了。",
+        "今天{{playerName}}在诊所待了一会儿。他的语言模式是'不太严重，但想听听你的意见'。这种表述很健康——既承认问题，又保持对自己的判断。处方写在了空气里。"
+      ],
+      "emotionTag": "Warm"
+    },
+    {
+      "templateId": "demetrius_player_data_001",
+      "npcName": "Demetrius",
+      "triggerType": "Environmental",
+      "priority": 4,
+      "cooldownDays": 3,
+      "textVariants": [
+        "记录：{{playerName}}今天在森林的路径重复率下降了42%。这意味着他选择了新路线。可能是因为心情变化，也可能只是随机。但数据不区分'可能'和'确定'。继续观测。",
+        "观测{{playerName}}第{{daysAway}}天：他在同一棵柳树旁站了六分钟。柳树摇摆频率为0.7Hz，与他站立的静默时间有正相关。但他没有录音设备——我确定。所以他在用自己的方式记录。"
+      ],
+      "emotionTag": "Curiosity"
+    },
+    {
+      "templateId": "leo_player_animal_001",
+      "npcName": "Leo",
+      "triggerType": "Environmental",
+      "priority": 5,
+      "cooldownDays": 2,
+      "textVariants": [
+        "（抬起右手）{{playerName}}对鹦鹉很好。他没有一上来就摸它。他先让鹦鹉看他。这个顺序只有懂动物的人才做对。他有自己的手势。等我发明好了，可以教他。",
+        "鹦鹉说{{playerName}}的呼吸很慢。动物能听懂呼吸。人的话反而多余。我给了他一个手势——他不懂，但他在看。看着就够了。"
+      ],
+      "emotionTag": "Warm"
+    },
+    {
+      "templateId": "jas_player_wreath_001",
+      "npcName": "Jas",
+      "triggerType": "DirectInteraction",
+      "priority": 5,
+      "cooldownDays": 2,
+      "textVariants": [
+        "{{playerName}}夸了我的花环！他蹲下来仔细看了每一朵花。别的—别的有些人说'好看'就走了。他把花一朵一朵看过去。我开心了一整天。编花环的时候手都在笑。",
+        "编了一个新花环，放了{{playerName}}夸过的那种花。他喜欢紫色的那朵。我把紫色的多编了几朵。可能他下次还会看到。"
+      ],
+      "emotionTag": "Warm"
+    },
+    {
+      "templateId": "vincent_player_bug_001",
+      "npcName": "Vincent",
+      "triggerType": "DirectInteraction",
+      "priority": 6,
+      "cooldownDays": 2,
+      "textVariants": [
+        "骑士报告！{{playerName}}被正式提拔为甲虫骑士团副团长。因为他过桥的时候没有踩那只牵牛虫！他还蹲下来看了看。这才是真正的骑士精神！",
+        "{{playerName}}今天看到一只瓢虫没有逃跑。瓢虫的直觉很准的——它知道谁是好心人。我的道—道—道谢？谢谢他。对。我替瓢虫说的。"
+      ],
+      "emotionTag": "Humor"
+    },
+    {
+      "templateId": "willy_player_sea_001",
+      "npcName": "Willy",
+      "triggerType": "Environmental",
+      "priority": 5,
+      "cooldownDays": 2,
+      "conditions": { "locations": ["Beach"] },
+      "textVariants": [
+        "{{playerName}}在栈桥尽头站了整整一个下午。鱼竿靠在栏杆上，饵都没有放。他不在钓鱼——他在等。等什么我不知道，但海知道。海对所有等的人都一视同仁。",
+        "海在跟{{playerName}}说话。浪花溅到他的鞋上——那是海在试探。下次浪会溅得高一点。总有一天浪会打到他的膝盖，那时候海就把他当自己人了。"
+      ],
+      "emotionTag": "Reflection"
+    },
+    {
+      "templateId": "willy_player_fish_001",
+      "npcName": "Willy",
+      "triggerType": "DirectInteraction",
+      "priority": 4,
+      "cooldownDays": 3,
+      "textVariants": [
+        "{{playerName}}钓到了一条。他看了看，然后放回去了。他没说为什么。但我见过很多人钓到鱼——钓鱼之后的表情比钓到之前更有意思。他放生的那个动作很轻。很好。"
+      ],
+      "emotionTag": "Warm"
+    },
+    {
+      "templateId": "gunther_player_touch_001",
+      "npcName": "Gunther",
+      "triggerType": "Environmental",
+      "priority": 5,
+      "cooldownDays": 3,
+      "conditions": { "locations": ["ArchaeologyHouse"] },
+      "textVariants": [
+        "{{playerName}}在博物馆里摸了那个旧留声机。他摸的不是旋钮——是喇叭口边缘。那是整个留声机上被摸过最多次的位置。他找到了。这个人的触觉有记忆。",
+        "又有人碰了那个破损的茶杯。是{{playerName}}。他小心地拿起又放下，刚好三秒钟的接触。我对这个茶杯有三个半不同的故事——现在又多了一个。谢了。"
+      ],
+      "emotionTag": "Nostalgia"
+    },
+    {
+      "templateId": "lewis_player_reject_001",
+      "npcName": "Lewis",
+      "triggerType": "Environmental",
+      "priority": 6,
+      "cooldownDays": 3,
+      "textVariants": [
+        "{{playerName}}拒绝参加了一个集体活动。很好。我一直想让镇子习惯'不参加'这个选项。他拒绝得很轻松——没有解释，没有道歉，就只是摇头。新来的人比老居民更懂这个。今天的白灯笼可能是为他亮的。",
+        "有人请{{playerName}}投票。他说不必了。这是他来了之后我最高兴的一个瞬间。不必要的选择是自由的负担。他卸下得比谁都自然。"
+      ],
+      "emotionTag": "Reflection"
+    },
+    {
+      "templateId": "marnie_player_care_001",
+      "npcName": "Marnie",
+      "triggerType": "Environmental",
+      "priority": 5,
+      "cooldownDays": 2,
+      "conditions": { "locations": ["AnimalHouse", "Forest"] },
+      "textVariants": [
+        "{{playerName}}在牧场里蹲了很久。和一只羊面对面。他没有急着摸它——先让羊闻他的手。动物不问你从哪里来，它们只看你的手。他的手很稳。羊看了一会儿，把头放进了他的掌心里。通过。",
+        "{{playerName}}帮我喂了鸡。不是'帮忙'——就是自然而然地拿起饲料桶。他洒饲料的手法和动物说话的语气很像：不热烈，但刚好。动物们喜欢这种温度。不太烫，不太冷——正好可以靠近。"
+      ],
+      "emotionTag": "Warm"
+    },
+    {
+      "templateId": "any_player_rain_001",
+      "npcName": "Any",
+      "triggerType": "WeatherEvent",
+      "priority": 5,
+      "cooldownDays": 2,
+      "conditions": { "weather": ["rain"] },
+      "textVariants": [
+        "今天下雨了。{{playerName}}没有打伞。雨水顺着他的头发流下来，他看着和下雨之前的他不一样了。雨水把所有人变回成他们自己——也许是衣服湿了的缘故。",
+        "雨下了一整天。{{playerName}}在{{location}}待了很久，没有被雨赶走。这人大概不是怕水的那一类。也许是内陆来的。也许是心里有更多雨。"
+      ],
+      "emotionTag": "Melancholy"
+    },
+    {
+      "templateId": "any_player_season_001",
+      "npcName": "Any",
+      "triggerType": "SeasonalEvent",
+      "priority": 4,
+      "cooldownDays": 1,
+      "textVariants": [
+        "季节变了。空气里有不一样的味道。{{playerName}}似乎也注意到了——他抬头看天的次数变多了。换季的时候最能看出一个人是不是真的在乎这个地方。他在乎。他看了两分钟的天。",
+        "今天是这个季节的第一天。{{playerName}}走过田埂的时候放慢了脚步。我可以从他的肩膀上看出来——他在闻。他在用鼻子感受时间。一个人什么时候开始用鼻子感受时间，他就什么时候真正住在了一个地方。"
+      ],
+      "emotionTag": "Reflection"
+    },
+    {
+      "templateId": "any_player_night_001",
+      "npcName": "Any",
+      "triggerType": "Environmental",
+      "priority": 4,
+      "cooldownDays": 2,
+      "conditions": { "timeOfDay": ["night"] },
+      "textVariants": [
+        "深夜了。{{playerName}}还没有回去。他可能是那种需要看到所有灯都灭了才会回家的人。或者是那种回家早的人，但今天突然不想了。",
+        "{{playerName}}在夜里走过来了。晚上走路的人分两种：有目的和没有目的的。他属于第三种——不知道有没有目的但走就是了。"
+      ],
+      "emotionTag": "Melancholy"
+    },
+    {
+      "templateId": "any_player_absent_001",
+      "npcName": "Any",
+      "triggerType": "OfflinePassage",
+      "priority": 3,
+      "cooldownDays": 1,
+      "conditions": { "minOfflineHours": 12 },
+      "textVariants": [
+        "{{daysAway}}天了。有人把你常坐的那个凳子擦了一遍。不是我擦的，我只是看到了。但那个人大概也是觉得你在的时候那个凳子就不一样。",
+        "你已经走了{{daysAway}}天。今天有一只鸟停在你住的地方的屋檐上，唱了三句。不是每天早上那种鸟——是傍晚才来的那种。它在等。"
+      ],
+      "emotionTag": "Longing"
+    },
+    {
+      "templateId": "any_player_daydream_001",
+      "npcName": "Any",
+      "triggerType": "Daydream",
+      "priority": 4,
+      "cooldownDays": 1,
+      "textVariants": [
+        "{{playerName}}今天在{{location}}发呆了好一阵子。他望着远方，眼神很轻。这个时候最好不要打扰他。每个人的思绪都需要散步——就像放一只风筝，不需要目的地，只需要天空。",
+        "{{playerName}}站着一动不动，但他不是在等什么。他是在让世界从他面前流过。这种发呆不是浪费时间——是在邀请时间休息。"
+      ],
+      "emotionTag": "Warm"
+    },
+    {
+      "templateId": "any_player_basket_001",
+      "npcName": "Any",
+      "triggerType": "BasketExchange",
+      "priority": 5,
+      "cooldownDays": 1,
+      "textVariants": [
+        "在互惠篮里发现了一样东西。是{{playerName}}放进去的。我不知道他想要什么，但我把我最近做的一件小东西放了进去。不是换——只是希望他也会喜欢。篮子是一个没有价格的集市，真好。",
+        "我从篮子里拿走了{{playerName}}放的{{givenItem}}。需要它的人总是刚好会来。作为回赠，我留下了{{receivedItem}}和一张小纸条。篮子不问为什么，它只是等。"
+      ],
+      "emotionTag": "Warm"
+    },
+    {
+      "templateId": "any_player_driftfind_001",
+      "npcName": "Any",
+      "triggerType": "DriftFind",
+      "priority": 4,
+      "cooldownDays": 2,
+      "textVariants": [
+        "在{{location}}捡到了{{item}}。一看就知道是从漂流物箱出去的——上面有一种顺流而下的气味。不知道是谁放进去的，但感谢这个人。有时候把东西放掉比抓住更需要勇气。",
+        "我捡到一个漂流物。看起来是有人放出去的。这种'不存着它、让它去'的做法让我想了很久。也许{{playerName}}知道更多关于漂流的事。"
+      ],
+      "emotionTag": "Curiosity"
+    }
+  ]
+}

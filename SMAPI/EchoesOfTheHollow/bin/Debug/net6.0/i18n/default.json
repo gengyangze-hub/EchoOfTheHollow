@@ -1,0 +1,63 @@
+{
+  "mod.name": "空谷回音 / Echoes of the Hollow",
+  "mod.description": "移除金钱、技能、好感度等数字系统，代之以NPC主观记忆日志",
+
+  "journal.title": "回音日志",
+  "journal.empty": "还没有人写下关于你的记忆。去镇上走走，让世界慢慢认识你。",
+  "journal.filter.npc": "按NPC筛选",
+  "journal.filter.all": "全部",
+  "journal.sort.newest": "最新优先",
+  "journal.sort.oldest": "最早优先",
+  "journal.write.diary": "写日记",
+  "journal.write.placeholder": "在这里写下你的想法...",
+  "journal.page": "第 {{current}} 页 / 共 {{total}} 页",
+
+  "basket.name": "互惠篮",
+  "basket.deposit": "放入物品",
+  "basket.note": "附言（可选）",
+  "basket.note.placeholder": "你想要什么？或者什么都不写...",
+  "basket.returned": "互惠篮里有东西被退回了。篮子空了，也许明天会有人需要它。",
+  "basket.exchanged": "有人从互惠篮里取走了你的{{item}}，留下了一样东西。",
+
+  "driftbox.name": "漂流物箱",
+  "driftbox.deposit": "放出物品",
+  "driftbox.message": "放进去的东西会漂流到镇上某个角落，被某个人发现。",
+
+  "enthusiasm.label": "兴致",
+  "enthusiasm.full": "兴致饱满",
+  "enthusiasm.tired": "有些疲惫",
+  "enthusiasm.drained": "精疲力尽",
+
+  "invitation.board": "邀约留言柱",
+  "invitation.accept": "接受邀约",
+  "invitation.ignore": "再看看",
+  "invitation.from": "来自 {{npc}} 的邀约",
+  "invitation.no_deadline": "无时限 · 无惩罚",
+
+  "offline.memories": "在你离开的日子里，有些人留下了关于你的记忆。",
+  "offline.days_away": "你离开了 {{days}} 天",
+
+  "festival.puzzle": "拼图节",
+  "festival.tapestry": "共缝花毡",
+  "festival.lantern": "放灯拾愿",
+  "festival.gift": "秘名交换",
+
+  "trigger.direct_interaction": "直接互动",
+  "trigger.environmental": "日常观察",
+  "trigger.cross_day": "跨日观察",
+  "trigger.absence": "缺席记录",
+  "trigger.seasonal": "季节事件",
+  "trigger.weather": "天气事件",
+  "trigger.basket": "互惠篮交换",
+  "trigger.drift": "漂流物发现",
+  "trigger.offline": "离线记忆",
+  "trigger.diary": "我的日记",
+  "trigger.daydream": "发呆时刻",
+
+  "config.title": "空谷回音 - 设置",
+  "config.enable_journal": "启用日志系统",
+  "config.enable_basket": "启用互惠篮",
+  "config.enable_driftbox": "启用漂流物箱",
+  "config.enable_enthusiasm": "启用兴致系统",
+  "config.debug_mode": "调试模式"
+}
