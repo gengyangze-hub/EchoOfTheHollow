@@ -13,7 +13,7 @@ using StardewValley.Menus;
 namespace EchoesOfTheHollow.UI
 {
     /// <summary>
-    /// 记忆之书 — 布面装订的个人记忆册
+    /// 记忆之书 -- 布面装订的个人记忆册
     /// Cloth-bound memory book replacing the social/hearts tab.
     /// Purely code-drawn: fabric texture, ribbon bookmark, pressed-flower decorations.
     /// </summary>
@@ -143,7 +143,7 @@ namespace EchoesOfTheHollow.UI
             // Base
             b.Draw(Game1.fadeToBlackRect, r, clothBase);
 
-            // Fabric weave — fine horizontal + vertical striping
+            // Fabric weave -- fine horizontal + vertical striping
             var rng = new Random(_seed);
             for (int y = r.Y + 4; y < r.Bottom - 4; y += 4)
             {
@@ -247,7 +247,7 @@ namespace EchoesOfTheHollow.UI
                 new Color(80, 90, 110) * 0.3f);
 
             // "NPCs" label
-            string label = "—— 村民 ——";
+            string label = "---- 村民 ----";
             Vector2 ls = Game1.tinyFont.MeasureString(label);
             b.DrawString(Game1.tinyFont, label,
                 new Vector2(r.Center.X - ls.X / 2, r.Y + 6),
@@ -419,7 +419,7 @@ namespace EchoesOfTheHollow.UI
             // Entries
             if (!_entriesByNpc.ContainsKey(_selectedNpcName!) || _entriesByNpc[_selectedNpcName!].Count == 0)
             {
-                string emptyMsg = "还没有写下关于你的记忆。\n去和他们说说话，或者只是在他们面前走过——\n他们会注意到的。";
+                string emptyMsg = "还没有写下关于你的记忆。\n去和他们说说话，或者只是在他们面前走过----\n他们会注意到的。";
                 b.DrawString(Game1.smallFont, emptyMsg,
                     new Vector2(x + 10, y + 20), new Color(110, 90, 70), 0f, Vector2.Zero, 0.85f, SpriteEffects.None, 0f);
                 return;
@@ -452,8 +452,9 @@ namespace EchoesOfTheHollow.UI
                 y += 16;
 
                 // Entry text
-                var lines = StringHelper.WrapText(entry.DisplayText, 46);
-                foreach (string line in lines.Take(3))
+                int textWidth = _entryDisplayBounds.Width - 60;
+                var lines = StringHelper.WrapText(entry.DisplayText, textWidth, 0.82f);
+                foreach (string line in lines.Take(5))
                 {
                     if (y + 16 < _entryDisplayBounds.Bottom - 40)
                     {
@@ -527,8 +528,8 @@ namespace EchoesOfTheHollow.UI
             bool hover = _closeButton.Contains(Game1.getMousePosition());
             Color bg = hover ? new Color(170, 60, 45) : new Color(110, 40, 30);
             b.Draw(Game1.fadeToBlackRect, _closeButton, bg);
-            Vector2 xs = Game1.smallFont.MeasureString("✕");
-            b.DrawString(Game1.smallFont, "✕",
+            Vector2 xs = Game1.smallFont.MeasureString("X");
+            b.DrawString(Game1.smallFont, "X",
                 new Vector2(_closeButton.Center.X - xs.X / 2, _closeButton.Center.Y - xs.Y / 2 + 1),
                 Color.White * 0.9f);
         }
@@ -561,10 +562,10 @@ namespace EchoesOfTheHollow.UI
 
         private static string EmotionToSymbol(string emotion) => emotion switch
         {
-            "Warm" => "✦ 温暖", "Melancholy" => "☁ 惆怅", "Curiosity" => "◈ 好奇",
-            "Humor" => "♧ 幽默", "Longing" => "☾ 牵挂", "Wonder" => "✧ 惊叹",
-            "Nostalgia" => "❦ 怀旧", "Reflection" => "♢ 思索", "Neutral" => "·",
-            _ => "·"
+            "Warm" => "[温暖]", "Melancholy" => "[惆怅]", "Curiosity" => "[好奇]",
+            "Humor" => "[幽默]", "Longing" => "[牵挂]", "Wonder" => "[惊叹]",
+            "Nostalgia" => "[怀旧]", "Reflection" => "[思索]", "Neutral" => "",
+            _ => ""
         };
 
         private Color GetNpcColor(string name) => name switch

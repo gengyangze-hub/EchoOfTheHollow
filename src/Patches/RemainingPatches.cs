@@ -32,7 +32,7 @@ namespace EchoesOfTheHollow.Patches
                 harmony.Patch(acceptQuest, new HarmonyMethod(accPrefix));
         }
 
-        /// <summary>Return null for daily quest — invitations replace quests</summary>
+        /// <summary>Return null for daily quest -- invitations replace quests</summary>
         public static bool QuestOfTheDay_Prefix(ref Quest __result)
         {
             __result = null!;
@@ -96,7 +96,7 @@ namespace EchoesOfTheHollow.Patches
     }
 
     /// <summary>
-    /// Collections tab blocker — prevent access to collections/achievements UI.
+    /// Collections tab blocker -- prevent access to collections/achievements UI.
     /// </summary>
     internal static class CollectionsPatches
     {
@@ -141,7 +141,7 @@ namespace EchoesOfTheHollow.Patches
     }
 
     /// <summary>
-    /// Event precondition bypass — ensures cutscenes aren't locked behind
+    /// Event precondition bypass -- ensures cutscenes aren't locked behind
     /// money or friendship heart requirements.
     /// In SDV 1.6, events use <c>Event.preconditionCheck</c> or similar.
     /// </summary>
@@ -197,18 +197,18 @@ namespace EchoesOfTheHollow.Patches
 
                 field.SetValue(__instance, conditions);
             }
-            catch { /* If reflection fails, fall through — original precondition logic runs */ }
+            catch { /* If reflection fails, fall through -- original precondition logic runs */ }
         }
     }
 
     /// <summary>
-    /// Dialogue token stripper — removes $g, $h, $b, $q, and other formatting
+    /// Dialogue token stripper -- removes $g, $h, $b, $q, and other formatting
     /// tokens from NPC dialogue text, since friendship values are meaningless
     /// in Echoes of the Hollow.
     /// </summary>
     internal static class DialoguePatches
     {
-        // Only strip $g (gender) and $h (heart-level) tokens — NEVER strip
+        // Only strip $g (gender) and $h (heart-level) tokens -- NEVER strip
         // $q (quest), $r (response), $b (branch), $p (prerequisite), $k/$s/$d (relationship)
         private static readonly Regex GenderHeartTokenRegex = new(
             @"\$[gh](?:\s*[^#$]*?#)?",
@@ -228,8 +228,9 @@ namespace EchoesOfTheHollow.Patches
             }
 
             // Patch NPC.showTextAboveHead to strip tokens
+            // SDV 1.6 signature: showTextAboveHead(string text, Color? spriteTextColor, int style, int duration, int preTimer)
             var aboveHeadMethod = AccessTools.Method(typeof(NPC), "showTextAboveHead",
-                new[] { typeof(string), typeof(int), typeof(int), typeof(int), typeof(int) });
+                new[] { typeof(string), typeof(Microsoft.Xna.Framework.Color?), typeof(int), typeof(int), typeof(int) });
             if (aboveHeadMethod == null)
                 aboveHeadMethod = AccessTools.Method(typeof(NPC), "showTextAboveHead");
 
@@ -258,10 +259,10 @@ namespace EchoesOfTheHollow.Patches
         }
 
         /// <summary>Strip tokens from NPC text bubbles</summary>
-        public static void ShowTextAboveHead_Prefix(ref string message)
+        public static void ShowTextAboveHead_Prefix(ref string text)
         {
-            if (!string.IsNullOrEmpty(message))
-                message = CleanDialogue(message);
+            if (!string.IsNullOrEmpty(text))
+                text = CleanDialogue(text);
         }
 
         /// <summary>Remove ONLY $g (gender) and $h (heart-level) tokens from dialogue.

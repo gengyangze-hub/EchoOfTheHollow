@@ -49,6 +49,15 @@
     <None Update="i18n\**\*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
+
+  <!-- Auto-copy DLL to mod root so SMAPI loads the latest build -->
+  <Target Name="CopyToModRoot" AfterTargets="Build">
+    <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFiles="$(MSBuildProjectDir)$(AssemblyName).dll" SkipUnchangedFiles="false" />
+    <Copy SourceFiles="$(OutputPath)$(AssemblyName).pdb" DestinationFiles="$(MSBuildProjectDir)$(AssemblyName).pdb" SkipUnchangedFiles="false" />
+  </Target>
 
 </Project>

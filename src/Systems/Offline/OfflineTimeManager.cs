@@ -9,7 +9,7 @@ using StardewModdingAPI;
 namespace EchoesOfTheHollow.Systems.Offline
 {
     /// <summary>
-    /// 离线时间管理 — tracks real-world time between sessions.
+    /// 离线时间管理 -- tracks real-world time between sessions.
     /// When players return after being away, NPCs generate "while you were away" memories.
     /// </summary>
     public class OfflineTimeManager

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace EchoesOfTheHollow.Data
 {
     /// <summary>
-    /// 漂流物箱物品记录 — items that drift to random town locations
+    /// 漂流物箱物品记录 -- items that drift to random town locations
     /// </summary>
     public class DriftRecord
     {
@@ -27,7 +27,7 @@ namespace EchoesOfTheHollow.Data
     }
 
     /// <summary>
-    /// 兴致状态 — replaces stamina
+    /// 兴致状态 -- replaces stamina
     /// </summary>
     public class EnthusiasmState
     {
@@ -121,7 +121,7 @@ namespace EchoesOfTheHollow.Data
     }
 
     /// <summary>
-    /// 活动记录 — 追踪玩家行为多样性
+    /// 活动记录 -- 追踪玩家行为多样性
     /// </summary>
     public class ActivityRecord
     {

@@ -5,7 +5,7 @@ namespace EchoesOfTheHollow.Patches
 {
     /// <summary>
     /// Remove friendship hearts. Instead, NPC interactions trigger journal entries.
-    /// Friendship data remains in the save — we only intercept at runtime.
+    /// Friendship data remains in the save -- we only intercept at runtime.
     /// </summary>
     internal static class NpcFriendshipPatches
     {

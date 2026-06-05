@@ -7,7 +7,7 @@ using StardewModdingAPI;
 namespace EchoesOfTheHollow.Systems.Festival
 {
     /// <summary>
-    /// 节日替换协调器 — replaces vanilla festivals with new versions
+    /// 节日替换协调器 -- replaces vanilla festivals with new versions
     /// Egg Hunt → Puzzle Festival
     /// Flower Dance → Tapestry Sewing
     /// Moonlight Jelly → Lantern Release
@@ -59,7 +59,7 @@ namespace EchoesOfTheHollow.Systems.Festival
             var entry = new Data.JournalEntry
             {
                 NpcName = "Lewis",
-                DisplayText = $"今天是{festivalName}。镇上的每个人都带来了自己珍视的小东西。没有比赛，没有评比——只是大家一起做一件小事，然后各自回家。这种感觉很像风：来过，消失了，但你记得它吹过。",
+                DisplayText = $"今天是{festivalName}。镇上的每个人都带来了自己珍视的小东西。没有比赛，没有评比----只是大家一起做一件小事，然后各自回家。这种感觉很像风：来过，消失了，但你记得它吹过。",
                 EmotionTag = "Warm",
                 Trigger = Data.TriggerType.SeasonalEvent,
                 DaysPlayed = (int)Game1.stats.DaysPlayed,

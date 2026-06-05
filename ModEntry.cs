@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
+using StardewModdingAPI.Utilities;
+using StardewValley.Menus;
 using EchoesOfTheHollow.Systems.Journal;
 using EchoesOfTheHollow.Systems.Economy;
 using EchoesOfTheHollow.Systems.Enthusiasm;
@@ -52,9 +54,6 @@ namespace EchoesOfTheHollow
         // --- Festival ---
         private FestivalReplacer? _festivalReplacer;
 
-        // --- UI ---
-        private EnthusiasmHud? _enthusiasmHud;
-
         public override void Entry(IModHelper helper)
         {
             Instance = this;
@@ -81,8 +80,8 @@ namespace EchoesOfTheHollow
             helper.Events.GameLoop.ReturnedToTitle += OnReturnedToTitle;
             helper.Events.GameLoop.TimeChanged += OnTimeChanged;
             helper.Events.Input.ButtonPressed += OnButtonPressed;
-            helper.Events.Display.RenderingHud += OnRenderingHud;
-            helper.Events.Display.RenderedHud += OnRenderedHud;
+            helper.Events.Input.ButtonsChanged += OnButtonsChanged;
+            helper.Events.Display.MenuChanged += OnMenuChanged;
             helper.Events.Player.Warped += OnWarped;
             helper.Events.World.LocationListChanged += OnLocationListChanged;
 
@@ -133,12 +132,16 @@ namespace EchoesOfTheHollow
             // ── Initialize Harmony patches ──
             HarmonyPatcher.Apply(helper, Config, Monitor);
 
-            // ── Initialize UI ──
-            _enthusiasmHud = new EnthusiasmHud(helper, Monitor, _enthusiasmSystem);
+            // ── Suppress vanilla keybindings that conflict with our UI ──
+            // J opens vanilla quest journal, H has no default, B has no default
+            // We suppress after Harmony patches so Harmony takes priority
+            try { helper.Input.Suppress(SButton.J); } catch { }
+            try { helper.Input.Suppress(SButton.H); } catch { }
 
             Log.Info("✅ All systems initialized. Mod ready!");
             Log.Info("   Memory templates loaded: " + _templateEngine.TemplateCount);
             Log.Info("   NPC voices loaded: " + _voiceRegistry.VoiceCount);
+            Log.Info("   Debug mode: ENABLED — check SMAPI console for diagnostics");
         }
 
         // ═══════════════════════════════════════════════
@@ -205,6 +208,12 @@ namespace EchoesOfTheHollow
             _triggerDetector?.OnDayStarted();
             _animalTrackingSystem?.OnDayStarted();
             _npcActiveGreeting?.OnDayStarted();
+
+            // ── Day 1 welcome letter ──
+            if (Game1.year == 1 && Game1.currentSeason == "spring" && Game1.dayOfMonth == 1)
+            {
+                ShowWelcomeLetter();
+            }
         }
 
         private void OnDayEnding(object? sender, DayEndingEventArgs e)
@@ -234,23 +243,57 @@ namespace EchoesOfTheHollow
             _triggerDetector?.OnTimeChanged(e.NewTime);
         }
 
+        /// <summary>SMAPI ButtonsChanged — more reliable than ButtonPressed for custom UIs</summary>
+        private void OnButtonsChanged(object? sender, ButtonsChangedEventArgs e)
+        {
+            if (Game1.activeClickableMenu != null) return; // Don't intercept when a menu is already open
+            if (!Context.IsWorldReady || Game1.player == null) return;
+
+            foreach (var button in e.Pressed)
+            {
+                Log.Debug($"[Input] Button pressed: {button} | ActiveMenu={Game1.activeClickableMenu?.GetType().Name ?? "null"} | IsPlayerFree={Context.IsPlayerFree}");
+
+                if (button == SButton.J)
+                {
+                    Log.Debug("[Input] J pressed — opening Echo Journal");
+                    OpenJournalMenu();
+                    Helper.Input.SuppressActiveKeybinds(new KeybindList(new Keybind(SButton.J)));
+                }
+                else if (button == SButton.B)
+                {
+                    Log.Debug("[Input] B pressed — opening Basket Menu");
+                    OpenBasketMenu();
+                    Helper.Input.SuppressActiveKeybinds(new KeybindList(new Keybind(SButton.B)));
+                }
+                else if (button == SButton.H)
+                {
+                    Log.Debug("[Input] H pressed — opening Memory Book");
+                    OpenMemoryBook();
+                    Helper.Input.SuppressActiveKeybinds(new KeybindList(new Keybind(SButton.H)));
+                }
+            }
+        }
+
         private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
         {
-            // Open journal with 'J' key
+            // Dual handler — both ButtonPressed and ButtonsChanged fire for reliability
+            Log.Debug($"[Input] ButtonPressed: {e.Button} | IsPlayerFree={Context.IsPlayerFree} | ActiveMenu={Game1.activeClickableMenu?.GetType().Name ?? "null"}");
+
+            if (Game1.activeClickableMenu != null) return; // Don't intercept when a menu is open
+
             if (e.Button == SButton.J && Context.IsPlayerFree)
             {
+                Log.Debug("[Input] ButtonPressed J → opening Echo Journal");
                 OpenJournalMenu();
             }
-
-            // Open basket with 'B' key
-            if (e.Button == SButton.B && Context.IsPlayerFree)
+            else if (e.Button == SButton.B && Context.IsPlayerFree)
             {
+                Log.Debug("[Input] ButtonPressed B → opening Basket Menu");
                 OpenBasketMenu();
             }
-
-            // Open memory book with 'H' key (social/hearts replacement)
-            if (e.Button == SButton.H && Context.IsPlayerFree)
+            else if (e.Button == SButton.H && Context.IsPlayerFree)
             {
+                Log.Debug("[Input] ButtonPressed H → opening Memory Book");
                 OpenMemoryBook();
             }
 
@@ -258,14 +301,13 @@ namespace EchoesOfTheHollow
             _daydreamingSystem?.OnButtonPressed(e.Button);
         }
 
-        private void OnRenderingHud(object? sender, RenderingHudEventArgs e)
+        /// <summary>MenuChanged — diagnostic logging only</summary>
+        private void OnMenuChanged(object? sender, MenuChangedEventArgs e)
         {
-            _enthusiasmHud?.OnRenderingHud();
-        }
-
-        private void OnRenderedHud(object? sender, RenderedHudEventArgs e)
-        {
-            _enthusiasmHud?.OnRenderedHud();
+            if (e.NewMenu is ShopMenu && Config.DebugMode)
+            {
+                Log.Debug($"[MenuChanged] ShopMenu opened. Prices handled by draw patch.");
+            }
         }
 
         private void OnWarped(object? sender, WarpedEventArgs e)
@@ -286,7 +328,30 @@ namespace EchoesOfTheHollow
             Log.Info("Returned to title - resetting state.");
         }
 
-        /// <summary>Clamp config values to safe ranges to prevent crashes</summary>
+        /// <summary>Day 1 welcome letter — a single detailed intro</summary>
+        private void ShowWelcomeLetter()
+        {
+            // Write a detailed intro letter as the first journal entry
+            _journalSystem?.AddPlayerEntry(
+                "一封来自鹈鹕镇的信",
+                "欢迎来到鹈鹕镇。\n\n" +
+                "在这里，没有人会谈论金钱、技能等级、好感度——这些东西在别处很重要，但在这里，它们被收起来了。\n\n" +
+                "取而代之的是「回音」——每个人观察你、记住你、在日志里写下关于你的只言片语。按 J 键打开回音日志，你会看到他们眼中的你。\n\n" +
+                "按 H 键打开记忆之书——那里可以按村民浏览他们对你的记忆，每个人都有自己独特的声音。\n\n" +
+                "按 B 键打开互惠篮——把不需要的东西放进去，写上你想交换的物品。第二天可能会有人来取走，并留下他们的东西。没有金钱，只有好意。\n\n" +
+                "右下角的体力条现在显示的是你的「兴致」——重复做同一件事会让它下降，尝试不同的活动会让它恢复。\n\n" +
+                "商店里的物品需要的是你与店主的好意，而非金币。多和他们相处，他们会愿意与你分享。\n\n" +
+                "邀约留言柱会出现在镇上——那是NPC们想和你一起做的事。\n\n" +
+                "这个世界不记录数字。它记录回音。而你，正在创造回音。\n\n" +
+                "—— 鹈鹕镇的每一个人"
+            );
+
+            Game1.addHUDMessage(new HUDMessage(
+                "你收到了一封信。按 J 打开回音日志查看。",
+                HUDMessage.newQuest_type));
+        }
+
+        /// <summary>Clamp config values</summary>
         private void ValidateConfig()
         {
             Config.MaxJournalEntries = Math.Clamp(Config.MaxJournalEntries, 50, 2000);
@@ -334,38 +399,74 @@ namespace EchoesOfTheHollow
         /// <summary>Open the main Echo Journal menu</summary>
         public static void OpenJournalMenu()
         {
-            if (Instance == null || Instance._journalSystem == null) return;
+            if (Instance == null)
+            {
+                StaticMonitor?.Log("[UI] OpenJournalMenu failed: Instance is null", LogLevel.Debug);
+                return;
+            }
+            if (Instance._journalSystem == null)
+            {
+                StaticMonitor?.Log("[UI] OpenJournalMenu failed: _journalSystem is null", LogLevel.Debug);
+                return;
+            }
 
+            StaticMonitor?.Log("[UI] Opening Echo Journal...", LogLevel.Debug);
             var menu = new EchoJournalMenu(
                 Instance._journalSystem,
                 Instance._voiceRegistry!,
                 Instance.Helper
             );
             Game1.activeClickableMenu = menu;
+            Game1.playSound("bigSelect");
+            StaticMonitor?.Log("[UI] Echo Journal opened successfully!", LogLevel.Debug);
         }
 
         /// <summary>Open the memory book (social tab replacement)</summary>
         public static void OpenMemoryBook()
         {
-            if (Instance == null || Instance._journalSystem == null) return;
+            if (Instance == null)
+            {
+                StaticMonitor?.Log("[UI] OpenMemoryBook failed: Instance is null", LogLevel.Debug);
+                return;
+            }
+            if (Instance._journalSystem == null)
+            {
+                StaticMonitor?.Log("[UI] OpenMemoryBook failed: _journalSystem is null", LogLevel.Debug);
+                return;
+            }
 
+            StaticMonitor?.Log("[UI] Opening Memory Book...", LogLevel.Debug);
             var menu = new MemoryBookMenu(
                 Instance._journalSystem,
                 Instance._voiceRegistry!
             );
             Game1.activeClickableMenu = menu;
+            Game1.playSound("bigSelect");
+            StaticMonitor?.Log("[UI] Memory Book opened successfully!", LogLevel.Debug);
         }
 
         /// <summary>Open the basket interaction UI</summary>
         public static void OpenBasketMenu()
         {
-            if (Instance == null || Instance._basketSystem == null || Instance._journalSystem == null) return;
+            if (Instance == null)
+            {
+                StaticMonitor?.Log("[UI] OpenBasketMenu failed: Instance is null", LogLevel.Debug);
+                return;
+            }
+            if (Instance._basketSystem == null || Instance._journalSystem == null)
+            {
+                StaticMonitor?.Log("[UI] OpenBasketMenu failed: _basketSystem or _journalSystem is null", LogLevel.Debug);
+                return;
+            }
 
+            StaticMonitor?.Log("[UI] Opening Basket Menu...", LogLevel.Debug);
             var menu = new BasketMenu(
                 Instance._basketSystem,
                 Instance._journalSystem
             );
             Game1.activeClickableMenu = menu;
+            Game1.playSound("bigSelect");
+            StaticMonitor?.Log("[UI] Basket Menu opened successfully!", LogLevel.Debug);
         }
 
         // ── Public accessors for patches ──

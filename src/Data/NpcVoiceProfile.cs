@@ -3,12 +3,13 @@ using System.Collections.Generic;
 namespace EchoesOfTheHollow.Data
 {
     /// <summary>
-    /// NPC语音档案 — 定义每个NPC独特的写作风格
+    /// NPC语音档案 -- 定义每个NPC独特的写作风格
     /// Defines each NPC's unique voice: vocabulary, metaphors, stylistic rules.
     /// </summary>
     public class NpcVoiceProfile
     {
         public string NpcName { get; set; } = string.Empty;
+        public string Gender { get; set; } = "Other";
         public string WritingStyle { get; set; } = "Prose";
         public string BaseTone { get; set; } = "Neutral";
         public float MetaphorFrequency { get; set; } = 0.3f;
@@ -32,7 +33,7 @@ namespace EchoesOfTheHollow.Data
         /// <summary>Stylistic transformation rules</summary>
         public List<StylisticRule> StylisticRules { get; set; } = new();
 
-        /// <summary>Value core — what this NPC cares about most (for exchange matching)</summary>
+        /// <summary>Value core -- what this NPC cares about most (for exchange matching)</summary>
         public string ValueCore { get; set; } = string.Empty;
 
         /// <summary>Personality description for exchange preference generation</summary>
